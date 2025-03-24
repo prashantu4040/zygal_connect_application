@@ -19,7 +19,7 @@ public class loginPageTest extends baseTest {
 
         // Fetch test data from parameterization class
         String username = parameterization.getData("loginData", 1, 0);
-        String otp = parameterization.getData("loginData", 1, 1); // Assuming OTP is stored
+        String otp = parameterization.getData("loginData", 1, 1);
 
         // Perform login steps using POM methods
         zygalLoginPage.enterUserId(username);
@@ -31,7 +31,5 @@ public class loginPageTest extends baseTest {
         zygalLoginPage.enterOTP(otp);
         zygalLoginPage.clickOnLogin();
 
-        // Optional: Validate login success or capture error
-        System.out.println("Error Message (if any): " + zygalLoginPage.getErrorText());
     }
 }

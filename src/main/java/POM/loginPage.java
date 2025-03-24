@@ -37,11 +37,12 @@ public class loginPage {
     @FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
     private WebElement otpField6;
 
-    @FindBy(xpath = "//button[contains(text(),'LOGIN')]")
+    @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement loginButton;
 
     @FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification_content')]")
     private WebElement getError;
+    
 
     // Constructor
     public loginPage(WebDriver driver) {
