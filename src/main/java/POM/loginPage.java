@@ -1,7 +1,6 @@
 package POM;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,66 +8,80 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Config.ConfigReader;
-
 public class loginPage {
-	private WebDriver driver;
+    private WebDriver driver;
 
-	@FindBy(xpath = "//input[@id='user_email_login']")
-	private WebElement userId;
-	@FindBy(xpath = "//input[@id='user_password_login']")
-	private WebElement password;
-	@FindBy(xpath = "//input[@id='captcha_input_login']")
-	private WebElement captcha;
-	@FindBy(xpath = "//button[@id='submit_login_btn']")
-	private WebElement submit;
-	@FindBy(xpath = "//a[text()='user_forgot_password_btn']")
-	private WebElement forgot_password;
-	@FindBy(xpath = "//a[text()=\"Don't have an account? Signup now!\"]")
-	private WebElement signup;
-	@FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification__content')]")
-	private WebElement getError;
+    // Login Page Elements
+    @FindBy(xpath = "//input[@id='email']")
+    private WebElement userId;
 
-	public loginPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+    @FindBy(xpath = "//button[contains(text(),'GET OTP')]")
+    private WebElement getOTPButton;
 
-	public void enteruserId(String user) {
-		userId.sendKeys(user);
-	}
+    // OTP Page Elements
+    @FindBy(xpath = "//input[@name='otp'][1]")
+    private WebElement otpField1;
 
-	public void enterpassword(String pass) {
-		password.sendKeys(pass);
-	}
+    @FindBy(xpath = "//input[@name='otp'][2]")
+    private WebElement otpField2;
 
-	public void enterCaptcha() {
-		String captchaBypassToken = ConfigReader.getProperty("captcha_token");
-		captcha.sendKeys(captchaBypassToken);
-	}
+    @FindBy(xpath = "//input[@name='otp'][3]")
+    private WebElement otpField3;
 
-	public void ClickOnSubmit() {
-		submit.click();
-	}
+    @FindBy(xpath = "//input[@name='otp'][4]")
+    private WebElement otpField4;
 
-	public void ClickOnforgot() {
-		forgot_password.click();
-	}
+    @FindBy(xpath = "//input[@name='otp'][5]")
+    private WebElement otpField5;
 
-	public void ClickOnSignup() {
-		signup.click();
-	}
+    @FindBy(xpath = "//input[@name='otp'][6]")
+    private WebElement otpField6;
 
-	public String getErrorText() {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			wait.until(ExpectedConditions.visibilityOf(getError));
+    @FindBy(xpath = "//button[contains(text(),'LOGIN')]")
+    private WebElement loginButton;
 
-			String errorMessage = getError.getText();
-			return errorMessage;
-		} catch (Exception e) {
-			return "No error message displayed";
-		}
-	}
+    @FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification_content')]")
+    private WebElement getError;
 
+    // Constructor
+    public loginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    // Enter email ID
+    public void enterUserId(String user) {
+        userId.sendKeys(user);
+    }
+
+    // Click on Get OTP button
+    public void clickOnGetOTP() {
+        getOTPButton.click();
+    }
+
+    // Enter OTP
+    public void enterOTP(String otp) {
+        otpField1.sendKeys(String.valueOf(otp.charAt(0)));
+        otpField2.sendKeys(String.valueOf(otp.charAt(1)));
+        otpField3.sendKeys(String.valueOf(otp.charAt(2)));
+        otpField4.sendKeys(String.valueOf(otp.charAt(3)));
+        otpField5.sendKeys(String.valueOf(otp.charAt(4)));
+        otpField6.sendKeys(String.valueOf(otp.charAt(5)));
+    }
+
+    // Click on Login button
+    public void clickOnLogin() {
+        loginButton.click();
+    }
+
+    // Get error text if any
+    public String getErrorText() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(getError));
+            return getError.getText();
+        } catch (Exception e) {
+            return "";
+        }
+    }
 }
