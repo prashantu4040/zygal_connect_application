@@ -12,29 +12,29 @@ public class loginPage {
     private WebDriver driver;
 
     // Login Page Elements
-    @FindBy(xpath = "//input[@id='email']")
+    @FindBy(xpath = "//input[@type='email' and @name='emailorphonenumber']")
     private WebElement userId;
 
-    @FindBy(xpath = "//button[contains(text(),'GET OTP')]")
+    @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement getOTPButton;
 
     // OTP Page Elements
-    @FindBy(xpath = "//input[@name='otp'][1]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_0' and @maxlength='1']")
     private WebElement otpField1;
 
-    @FindBy(xpath = "//input[@name='otp'][2]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_1' and @maxlength='1']")
     private WebElement otpField2;
 
-    @FindBy(xpath = "//input[@name='otp'][3]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_2' and @maxlength='1']")
     private WebElement otpField3;
 
-    @FindBy(xpath = "//input[@name='otp'][4]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_3' and @maxlength='1']")
     private WebElement otpField4;
 
-    @FindBy(xpath = "//input[@name='otp'][5]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_4' and @maxlength='1']")
     private WebElement otpField5;
 
-    @FindBy(xpath = "//input[@name='otp'][6]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
     private WebElement otpField6;
 
     @FindBy(xpath = "//button[contains(text(),'LOGIN')]")
