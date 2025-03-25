@@ -4,7 +4,7 @@
         <listener class-name="Utility.testReportListener"/>
     </listeners>
     
-    <test name="Login Tests">
+    <test name="Zygal Connect Mobile App Test Cases">
         <classes>
             <class name="Test.loginPageTest"/>
             <class name="Test.homePageTest"/>
