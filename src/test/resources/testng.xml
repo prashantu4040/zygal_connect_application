@@ -7,6 +7,7 @@
     <test name="Login Tests">
         <classes>
             <class name="Test.loginPageTest"/>
+            <class name="Test.homePageTest"/>
         </classes>
     </test>
 </suite>

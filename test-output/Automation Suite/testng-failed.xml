@@ -6,6 +6,11 @@
   </listeners>
   <test thread-count="5" name="Login Tests(failed)">
     <classes>
+      <class name="Test.homePageTest">
+        <methods>
+          <include name="verifyHomePageLoads"/>
+        </methods>
+      </class> <!-- Test.homePageTest -->
       <class name="Test.loginPageTest">
         <methods>
           <include name="browserLaunch"/>
