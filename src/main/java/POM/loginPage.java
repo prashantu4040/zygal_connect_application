@@ -12,36 +12,40 @@ public class loginPage {
     private WebDriver driver;
 
     // Login Page Elements
-    @FindBy(xpath = "//input[@id='email']")
+    @FindBy(xpath = "//input[@type='email' and @name='emailorphonenumber']")
     private WebElement userId;
 
-    @FindBy(xpath = "//button[contains(text(),'GET OTP')]")
+    @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement getOTPButton;
 
     // OTP Page Elements
-    @FindBy(xpath = "//input[@name='otp'][1]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_0' and @maxlength='1']")
     private WebElement otpField1;
 
-    @FindBy(xpath = "//input[@name='otp'][2]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_1' and @maxlength='1']")
     private WebElement otpField2;
 
-    @FindBy(xpath = "//input[@name='otp'][3]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_2' and @maxlength='1']")
     private WebElement otpField3;
 
-    @FindBy(xpath = "//input[@name='otp'][4]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_3' and @maxlength='1']")
     private WebElement otpField4;
 
-    @FindBy(xpath = "//input[@name='otp'][5]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_4' and @maxlength='1']")
     private WebElement otpField5;
 
-    @FindBy(xpath = "//input[@name='otp'][6]")
+    @FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
     private WebElement otpField6;
 
-    @FindBy(xpath = "//button[contains(text(),'LOGIN')]")
+    @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement loginButton;
 
     @FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification_content')]")
     private WebElement getError;
+
+    // Footer WebElement (To validate successful login)
+    @FindBy(xpath = "//footer[@id='newmenubarid']")
+    private WebElement footer;
 
     // Constructor
     public loginPage(WebDriver driver) {
@@ -58,6 +62,11 @@ public class loginPage {
     public void clickOnGetOTP() {
         getOTPButton.click();
     }
+    
+    public WebElement getOtpField1() {
+        return otpField1;
+    }
+
 
     // Enter OTP
     public void enterOTP(String otp) {
@@ -82,6 +91,17 @@ public class loginPage {
             return getError.getText();
         } catch (Exception e) {
             return "";
+        }
+    }
+
+    // Check if the footer is visible (Login Success Validation)
+    public boolean isFooterVisible() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(footer));
+            return footer.isDisplayed();
+        } catch (Exception e) {
+            return false;
         }
     }
 }
