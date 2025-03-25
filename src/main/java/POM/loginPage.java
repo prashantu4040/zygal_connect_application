@@ -42,7 +42,10 @@ public class loginPage {
 
     @FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification_content')]")
     private WebElement getError;
-    
+
+    // Footer WebElement (To validate successful login)
+    @FindBy(xpath = "//footer[@id='newmenubarid']")
+    private WebElement footer;
 
     // Constructor
     public loginPage(WebDriver driver) {
@@ -59,6 +62,11 @@ public class loginPage {
     public void clickOnGetOTP() {
         getOTPButton.click();
     }
+    
+    public WebElement getOtpField1() {
+        return otpField1;
+    }
+
 
     // Enter OTP
     public void enterOTP(String otp) {
@@ -83,6 +91,17 @@ public class loginPage {
             return getError.getText();
         } catch (Exception e) {
             return "";
+        }
+    }
+
+    // Check if the footer is visible (Login Success Validation)
+    public boolean isFooterVisible() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(footer));
+            return footer.isDisplayed();
+        } catch (Exception e) {
+            return false;
         }
     }
 }
