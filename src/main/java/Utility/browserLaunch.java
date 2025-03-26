@@ -12,42 +12,53 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.Optional;
 
 public class browserLaunch {
-	public static WebDriver openBrowser() {
-		// Setup ChromeOptions
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
 
-		// Setup WebDriver
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver(options);
+    /**
+     * Opens the Chrome browser with mobile emulation and loads the specified URL.
+     * 
+     * @return WebDriver instance with applied settings.
+     */
+    public static WebDriver openBrowser() {
+        // Setup ChromeOptions to disable browser notifications
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
 
-		// Open DevTools and start a session
-		DevTools devTools = ((ChromeDriver) driver).getDevTools();
-		devTools.createSession();
+        // Setup and initialize WebDriver
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(options);
 
-		// Function to apply iPhone SE mobile emulation
-		applyMobileEmulation(devTools);
+        // Open Chrome DevTools and start a session
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
 
-		// Load URL after emulation is applied
-		String baseUrl = ConfigReader.getProperty("base_url");
-		driver.get(baseUrl);
+        // Apply mobile emulation (iPhone SE simulation)
+        applyMobileEmulation(devTools);
 
-		// Reapply emulation after page load to prevent reverting to fullscreen
-		applyMobileEmulation(devTools);
+        // Load the base URL from the config file
+        String baseUrl = ConfigReader.getProperty("base_url");
+        driver.get(baseUrl);
 
-		return driver;
-	}
+        // Reapply mobile emulation after page load to maintain settings
+        applyMobileEmulation(devTools);
 
-	// Function to apply mobile emulation settings
-	private static void applyMobileEmulation(DevTools devTools) {
-		devTools.send(Emulation.setDeviceMetricsOverride(375, 667, 2.0, true, // width, height, scale factor, mobile
-																				// mode
-				Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(),
-				Optional.empty(), Optional.empty(), Optional.empty()));
+        return driver;
+    }
 
-		// Set iPhone SE User-Agent
-		devTools.send(Emulation.setUserAgentOverride(
-				"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36",
-				Optional.empty(), Optional.empty(), Optional.empty()));
-	}
+    /**
+     * Applies mobile emulation settings to mimic an iPhone SE device.
+     * 
+     * @param devTools DevTools instance to interact with the Chrome browser.
+     */
+    private static void applyMobileEmulation(DevTools devTools) {
+        // Set the device screen size and scale factor to mimic a mobile device
+        devTools.send(Emulation.setDeviceMetricsOverride(
+                375, 667, 2.0, true, // width, height, scale factor, mobile mode
+                Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(),
+                Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // Set the User-Agent string to simulate an iPhone SE
+        devTools.send(Emulation.setUserAgentOverride(
+                "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36",
+                Optional.empty(), Optional.empty(), Optional.empty()));
+    }
 }

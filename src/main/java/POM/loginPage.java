@@ -8,17 +8,30 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * Page Object Model (POM) class for Login Page.
+ * This class contains WebElements and methods for user authentication.
+ */
 public class loginPage {
     private WebDriver driver;
 
-    // Login Page Elements
+    // ==============================
+    // Locators - Login Page Elements
+    // ==============================
+
+    /** Email or phone number input field */
     @FindBy(xpath = "//input[@type='email' and @name='emailorphonenumber']")
     private WebElement userId;
 
+    /** "Get OTP" button */
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement getOTPButton;
 
-    // OTP Page Elements
+    // ==============================
+    // Locators - OTP Input Fields
+    // ==============================
+
+    /** OTP input fields (each digit has a separate input box) */
     @FindBy(xpath = "//input[@type='password' and @name='otp_0' and @maxlength='1']")
     private WebElement otpField1;
 
@@ -36,42 +49,67 @@ public class loginPage {
 
     @FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
     private WebElement otpField6;
-    
-    
-    // Login button
+
+    /** "Login" button */
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement loginButton;
-    
-    //get error message on login page
+
+    /** Error message displayed when login fails */
     @FindBy(xpath = "//h3[text()='Error']/following-sibling::div")
     private WebElement getError;
 
-    // Footer WebElement (To validate successful login)
+    /** Footer element used to verify successful login */
     @FindBy(xpath = "//footer[@id='newmenubarid']")
     private WebElement footer;
 
+    // ==============================
     // Constructor
+    // ==============================
+
+    /**
+     * Constructor initializes the Page Object Model for loginPage.
+     * 
+     * @param driver WebDriver instance used for interacting with the web elements.
+     */
     public loginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    // Enter email ID
+    // ==============================
+    // Methods - Login Actions
+    // ==============================
+
+    /**
+     * Enters the user ID (email or phone number) in the input field.
+     * 
+     * @param user The email or phone number of the user.
+     */
     public void enterUserId(String user) {
         userId.sendKeys(user);
     }
 
-    // Click on Get OTP button
+    /**
+     * Clicks on the "Get OTP" button to request an OTP for login.
+     */
     public void clickOnGetOTP() {
         getOTPButton.click();
     }
-    
+
+    /**
+     * Returns the first OTP input field WebElement.
+     * 
+     * @return WebElement for the first OTP field.
+     */
     public WebElement getOtpField1() {
         return otpField1;
     }
 
-
-    // Enter OTP
+    /**
+     * Enters the OTP into the respective OTP input fields.
+     * 
+     * @param otp The six-digit OTP received by the user.
+     */
     public void enterOTP(String otp) {
         otpField1.sendKeys(String.valueOf(otp.charAt(0)));
         otpField2.sendKeys(String.valueOf(otp.charAt(1)));
@@ -81,12 +119,18 @@ public class loginPage {
         otpField6.sendKeys(String.valueOf(otp.charAt(5)));
     }
 
-    // Click on Login button
+    /**
+     * Clicks on the "Login" button to proceed with authentication.
+     */
     public void clickOnLogin() {
         loginButton.click();
     }
 
-    // Get error text if any
+    /**
+     * Retrieves the error message displayed on the login page, if any.
+     * 
+     * @return The error message text if visible, otherwise an empty string.
+     */
     public String getErrorText() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -97,7 +141,11 @@ public class loginPage {
         }
     }
 
-    // Check if the footer is visible (Login Success Validation)
+    /**
+     * Verifies whether the footer element is visible, indicating a successful login.
+     * 
+     * @return true if the footer is displayed, false otherwise.
+     */
     public boolean isFooterVisible() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
