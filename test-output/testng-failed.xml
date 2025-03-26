@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="Utility.testReportListener"/>
   </listeners>
-  <test thread-count="5" name="Login Tests(failed)">
+  <test thread-count="5" name="Zygal Connect Mobile App Test Cases(failed)">
     <classes>
       <class name="Test.homePageTest">
         <methods>
@@ -18,5 +18,5 @@
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>
-  </test> <!-- Login Tests(failed) -->
+  </test> <!-- Zygal Connect Mobile App Test Cases(failed) -->
 </suite> <!-- Failed suite [Automation Suite] -->

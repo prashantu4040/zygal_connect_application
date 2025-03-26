@@ -36,11 +36,14 @@ public class loginPage {
 
     @FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
     private WebElement otpField6;
-
+    
+    
+    // Login button
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement loginButton;
-
-    @FindBy(xpath = "//div[@role='alert']//div[contains(@class,'el-notification_content')]")
+    
+    //get error message on login page
+    @FindBy(xpath = "//h3[text()='Error']/following-sibling::div")
     private WebElement getError;
 
     // Footer WebElement (To validate successful login)
@@ -86,7 +89,7 @@ public class loginPage {
     // Get error text if any
     public String getErrorText() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
             wait.until(ExpectedConditions.visibilityOf(getError));
             return getError.getText();
         } catch (Exception e) {
