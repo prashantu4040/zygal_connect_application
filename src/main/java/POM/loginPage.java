@@ -177,8 +177,10 @@ public class loginPage {
 
 	
 	public String getUserIdFieldValue() {
-	    return userId.getAttribute("value").trim();  // Trim any spaces
+	    String value = userId.getDomAttribute("value"); 
+	    return (value != null) ? value : userId.getDomProperty("value");
 	}
+
 	
 	public void clickGoToSignIn() {
 		goToSignPage.click();
