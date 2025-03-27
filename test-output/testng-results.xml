@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-25T16:11:09 IST" name="Automation Suite" finished-at="2025-03-25T16:11:15 IST" duration-ms="5804">
+  <suite started-at="2025-03-27T13:35:07 IST" name="Automation Suite" finished-at="2025-03-27T13:35:23 IST" duration-ms="16083">
     <groups>
     </groups>
-    <test started-at="2025-03-25T16:11:09 IST" name="Login Tests" finished-at="2025-03-25T16:11:15 IST" duration-ms="5804">
+    <test started-at="2025-03-27T13:35:07 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-03-27T13:35:23 IST" duration-ms="16083">
       <class name="Test.loginPageTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:Test.loginPageTest@3d9f6567]" started-at="2025-03-25T16:11:09 IST" name="browserLaunch" finished-at="2025-03-25T16:11:12 IST" duration-ms="3274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserLaunch -->
-        <test-method signature="loginWithValidCredentialsTest()[pri:0, instance:Test.loginPageTest@3d9f6567]" started-at="2025-03-25T16:11:12 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-03-25T16:11:15 IST" duration-ms="2441" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T13:35:07 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-03-27T13:35:15 IST" duration-ms="7930" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4bef0fe3]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
+        <test-method signature="loginWithInvalidCredentialsTest()[pri:2, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T13:35:15 IST" name="loginWithInvalidCredentialsTest" description="User Login with Invalid Credentials" finished-at="2025-03-27T13:35:23 IST" duration-ms="8079" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidCredentialsTest -->
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads()[pri:0, instance:Test.homePageTest@18c5069b]" started-at="2025-03-25T16:11:15 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-03-25T16:11:15 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="28" status="PASS">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@c055c54]" started-at="2025-03-27T13:35:23 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-03-27T13:35:23 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="24" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4bef0fe3]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageLoads -->
       </class> <!-- Test.homePageTest -->
-    </test> <!-- Login Tests -->
+    </test> <!-- Zygal Connect Mobile App Test Cases -->
   </suite> <!-- Automation Suite -->
 </testng-results>
