@@ -9,7 +9,8 @@ import org.testng.ITestResult;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * TestNG Listener for generating test reports in an Excel file.
@@ -20,32 +21,42 @@ public class testReportListener implements ITestListener {
     private static Workbook workbook = new XSSFWorkbook(); // Creating an Excel workbook
     private static Sheet sheet = workbook.createSheet("Test Results"); // Creating a sheet for test results
     private static int rowNum = 0; // Row number tracker for writing data
+    private static Map<String, Integer> testCaseIds = new HashMap<>(); // Stores Test Case ID for each unique test case name
+    private static int testCaseCounter = 1; // Counter for assigning Test Case IDs
 
-    // Static block to initialize the header row in the Excel sheet
+    // Static block to initialize the header row in the Excel sheet with bold text
     static {
         Row headerRow = sheet.createRow(rowNum++);
-        headerRow.createCell(0).setCellValue("Test Case Name");
-        headerRow.createCell(1).setCellValue("Step Name");
-        headerRow.createCell(2).setCellValue("Status");
-        headerRow.createCell(3).setCellValue("Execution Time");
-        headerRow.createCell(4).setCellValue("Comment");
+        CellStyle boldStyle = workbook.createCellStyle();
+        Font boldFont = workbook.createFont();
+        boldFont.setBold(true);
+        boldStyle.setFont(boldFont);
+
+        String[] headers = {"Test Case ID", "Test Case Name", "Step Name", "Status", "Execution Time", "Comment"};
+        for (int i = 0; i < headers.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(headers[i]);
+            cell.setCellStyle(boldStyle);
+        }
     }
 
     /**
      * Logs sub-steps within a test case.
-     * 
+     *
      * @param testCaseName The name of the main test case
      * @param stepName     The sub-step name (e.g., "Invalid Email Attempt")
      * @param status       The status (PASSED/FAILED)
      * @param comment      Additional information about the sub-step execution
      */
     public static void logSubStep(String testCaseName, String stepName, String status, String comment) {
+        int testCaseId = getTestCaseId(testCaseName);
         Row row = sheet.createRow(rowNum++);
-        row.createCell(0).setCellValue(testCaseName); // Main Test Case Name
-        row.createCell(1).setCellValue(stepName); // Sub-step Name
-        row.createCell(2).setCellValue(status); // PASSED/FAILED
-        row.createCell(3).setCellValue(new Date().toString()); // Execution Time
-        row.createCell(4).setCellValue(comment); // Comment or failure reason
+        row.createCell(0).setCellValue(testCaseId); // Test Case ID
+        row.createCell(1).setCellValue(testCaseName); // Main Test Case Name
+        row.createCell(2).setCellValue(stepName); // Sub-step Name
+        row.createCell(3).setCellValue(status); // PASSED/FAILED
+        row.createCell(4).setCellValue(getFormattedExecutionTime()); // Execution Time
+        row.createCell(5).setCellValue(comment); // Comment or failure reason
     }
 
     /**
@@ -90,12 +101,31 @@ public class testReportListener implements ITestListener {
      * Writes the test result details into the Excel sheet.
      */
     private void writeResult(ITestResult result, String status, String comment) {
+        String testCaseName = result.getMethod().getDescription() != null ?
+                              result.getMethod().getDescription() : result.getName();
+        int testCaseId = getTestCaseId(testCaseName);
+
         Row row = sheet.createRow(rowNum++);
-        String testName = result.getMethod().getDescription(); // Fetching test case description
-        row.createCell(0).setCellValue(testName != null ? testName : result.getName()); // Test case name
-        row.createCell(1).setCellValue("No Sub-Steps"); // Placeholder if no sub-steps exist
-        row.createCell(2).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
-        row.createCell(3).setCellValue(new Date().toString()); // Execution time
-        row.createCell(4).setCellValue(comment); // Comment or failure reason
+        row.createCell(0).setCellValue(testCaseId); // Test Case ID
+        row.createCell(1).setCellValue(testCaseName); // Test Case Name
+        row.createCell(2).setCellValue("No Sub-Steps"); // Placeholder if no sub-steps exist
+        row.createCell(3).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
+        row.createCell(4).setCellValue(getFormattedExecutionTime()); // Execution Time
+        row.createCell(5).setCellValue(comment); // Comment or failure reason
+    }
+
+    /**
+     * Retrieves or assigns a unique Test Case ID for each test case name using HashMap.
+     */
+    private static int getTestCaseId(String testCaseName) {
+        return testCaseIds.computeIfAbsent(testCaseName, k -> testCaseCounter++);
+    }
+
+    /**
+     * Formats the execution time in 12-hour format (MM/dd/yyyy hh:mm:ss a) with AM/PM in uppercase.
+     */
+    private static String getFormattedExecutionTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a", Locale.ENGLISH);
+        return dateFormat.format(new Date()).toUpperCase(); // Convert AM/PM to uppercase
     }
 }
