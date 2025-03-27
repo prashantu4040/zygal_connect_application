@@ -41,6 +41,21 @@ public class testReportListener implements ITestListener {
     }
 
     /**
+     * Deletes the previous test report before starting a new test execution.
+     */
+    @Override
+    public void onStart(ITestContext context) {
+        File reportFile = new File(FILE_PATH);
+        if (reportFile.exists()) {
+            if (reportFile.delete()) {
+                System.out.println("Previous test report deleted successfully.");
+            } else {
+                System.out.println("Failed to delete previous test report.");
+            }
+        }
+    }
+
+    /**
      * Logs sub-steps within a test case.
      *
      * @param testCaseName The name of the main test case
