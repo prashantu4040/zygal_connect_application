@@ -5,8 +5,7 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="browserLaunch"/>
-          <include name="loginWithValidCredentialsTest"/>
+          <include name="loginWithInvalidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>
