@@ -25,16 +25,31 @@ public class testReportListener implements ITestListener {
     static {
         Row headerRow = sheet.createRow(rowNum++);
         headerRow.createCell(0).setCellValue("Test Case Name");
-        headerRow.createCell(1).setCellValue("Status");
-        headerRow.createCell(2).setCellValue("Execution Time");
-        headerRow.createCell(3).setCellValue("Comment"); 
+        headerRow.createCell(1).setCellValue("Step Name");
+        headerRow.createCell(2).setCellValue("Status");
+        headerRow.createCell(3).setCellValue("Execution Time");
+        headerRow.createCell(4).setCellValue("Comment");
+    }
+
+    /**
+     * Logs sub-steps within a test case.
+     * 
+     * @param testCaseName The name of the main test case
+     * @param stepName     The sub-step name (e.g., "Invalid Email Attempt")
+     * @param status       The status (PASSED/FAILED)
+     * @param comment      Additional information about the sub-step execution
+     */
+    public static void logSubStep(String testCaseName, String stepName, String status, String comment) {
+        Row row = sheet.createRow(rowNum++);
+        row.createCell(0).setCellValue(testCaseName); // Main Test Case Name
+        row.createCell(1).setCellValue(stepName); // Sub-step Name
+        row.createCell(2).setCellValue(status); // PASSED/FAILED
+        row.createCell(3).setCellValue(new Date().toString()); // Execution Time
+        row.createCell(4).setCellValue(comment); // Comment or failure reason
     }
 
     /**
      * This method is invoked when a test case passes.
-     * It logs the test case as "PASSED" with a success comment.
-     *
-     * @param result The test result object
      */
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -43,9 +58,6 @@ public class testReportListener implements ITestListener {
 
     /**
      * This method is invoked when a test case fails.
-     * It logs the test case as "FAILED" along with the failure reason.
-     *
-     * @param result The test result object
      */
     @Override
     public void onTestFailure(ITestResult result) {
@@ -55,9 +67,6 @@ public class testReportListener implements ITestListener {
 
     /**
      * This method is invoked when a test case is skipped.
-     * It logs the test case as "SKIPPED" with a relevant message.
-     *
-     * @param result The test result object
      */
     @Override
     public void onTestSkipped(ITestResult result) {
@@ -66,9 +75,6 @@ public class testReportListener implements ITestListener {
 
     /**
      * This method is invoked at the end of the test execution.
-     * It writes the data to the Excel file and saves the report.
-     *
-     * @param context The test execution context
      */
     @Override
     public void onFinish(ITestContext context) {
@@ -82,17 +88,14 @@ public class testReportListener implements ITestListener {
 
     /**
      * Writes the test result details into the Excel sheet.
-     *
-     * @param result  The test result object
-     * @param status  The test execution status (PASSED, FAILED, SKIPPED)
-     * @param comment A comment describing the test result
      */
     private void writeResult(ITestResult result, String status, String comment) {
-        Row row = sheet.createRow(rowNum++); // Creating a new row
+        Row row = sheet.createRow(rowNum++);
         String testName = result.getMethod().getDescription(); // Fetching test case description
         row.createCell(0).setCellValue(testName != null ? testName : result.getName()); // Test case name
-        row.createCell(1).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
-        row.createCell(2).setCellValue(new Date().toString()); // Execution time
-        row.createCell(3).setCellValue(comment); // Comment or failure reason
+        row.createCell(1).setCellValue("No Sub-Steps"); // Placeholder if no sub-steps exist
+        row.createCell(2).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
+        row.createCell(3).setCellValue(new Date().toString()); // Execution time
+        row.createCell(4).setCellValue(comment); // Comment or failure reason
     }
 }

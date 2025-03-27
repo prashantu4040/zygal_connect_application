@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-27T12:56:08 IST" name="Automation Suite" finished-at="2025-03-27T12:56:21 IST" duration-ms="12820">
+  <suite started-at="2025-03-27T13:31:03 IST" name="Automation Suite" finished-at="2025-03-27T13:31:17 IST" duration-ms="14461">
     <groups>
     </groups>
-    <test started-at="2025-03-27T12:56:08 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-03-27T12:56:21 IST" duration-ms="12820">
+    <test started-at="2025-03-27T13:31:03 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-03-27T13:31:17 IST" duration-ms="14461">
       <class name="Test.loginPageTest">
-        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T12:56:08 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-03-27T12:56:16 IST" duration-ms="7970" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T13:31:03 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-03-27T13:31:11 IST" duration-ms="8733" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,13 +18,13 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
-        <test-method signature="loginWithInvalidCredentialsTest()[pri:2, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T12:56:16 IST" name="loginWithInvalidCredentialsTest" description="User Login with Invalid Credentials" finished-at="2025-03-27T12:56:21 IST" duration-ms="4750" status="PASS">
+        <test-method signature="loginWithInvalidCredentialsTest()[pri:2, instance:Test.loginPageTest@7c1e2a2d]" started-at="2025-03-27T13:31:11 IST" name="loginWithInvalidCredentialsTest" description="User Login with Invalid Credentials" finished-at="2025-03-27T13:31:17 IST" duration-ms="5644" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCredentialsTest -->
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@c055c54]" started-at="2025-03-27T12:56:21 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-03-27T12:56:21 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="40" status="PASS">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@c055c54]" started-at="2025-03-27T13:31:17 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-03-27T13:31:17 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="20" status="PASS">
           <params>
             <param index="0">
               <value>
