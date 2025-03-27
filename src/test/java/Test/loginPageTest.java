@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import POM.loginPage;
 import Utility.parameterization;
 import Utility.browserLaunch;
+import Utility.testReportListener;
 
 /**
  * This class contains test cases for login functionality using Selenium WebDriver and TestNG.
@@ -47,7 +48,6 @@ public class loginPageTest {
 
     /**
      * Test: Login with valid credentials.
-     * If successful, mark test as a pass for running the next test case.
      */
     @Test(description = "User Login with Valid Credentials", priority = 1)
     public void loginWithValidCredentialsTest(ITestContext context) throws IOException {
@@ -77,9 +77,7 @@ public class loginPageTest {
 
     /**
      * Test: Login with invalid credentials.
-     * Runs independently in a new browser instance.
      */
-
     @Test(description = "User Login with Invalid Credentials", priority = 2)
     public void loginWithInvalidCredentialsTest() throws IOException {
         WebDriver driver = browserLaunch.openBrowser(); // New independent browser instance
@@ -95,10 +93,15 @@ public class loginPageTest {
             String errorMessage = zygalLoginPage.getErrorText();
             Assert.assertFalse(errorMessage.isEmpty(), "Expected login error message was not displayed for invalid email!");
 
+            // Log step in the test report
+            testReportListener.logSubStep("User Login with Invalid Credentials", "Invalid Email Attempt", "PASSED", "Error displayed correctly");
+
             // **Step 2: Clear the input field and verify it's empty**
             zygalLoginPage.clearUserIdField();
             String fieldValue = zygalLoginPage.getUserIdFieldValue();
             Assert.assertTrue(fieldValue.isEmpty(), "User ID field is not cleared before entering valid email!");
+
+            testReportListener.logSubStep("User Login with Invalid Credentials", "Clear User ID Field", "PASSED", "Field cleared successfully");
 
             // **Step 3: Test Invalid OTP**
             String validUsername = parameterization.getData("loginData", 1, 0); // Correct email
@@ -115,22 +118,20 @@ public class loginPageTest {
 
             errorMessage = zygalLoginPage.getErrorText();
             Assert.assertFalse(errorMessage.isEmpty(), "Expected error message was not displayed for invalid OTP!");
-            
-         // Close the error toast message
-            zygalLoginPage.closeErrorToast();
-            
-         // Locate and click "Go to Sign In" button
-            zygalLoginPage.clickGoToSignIn();
 
-            // Verify navigation back to "Get OTP" page
+            testReportListener.logSubStep("User Login with Invalid Credentials", "Invalid OTP Attempt", "PASSED", "Error displayed correctly for invalid OTP");
+
+            // **Step 4: Click "Go to Sign In" and verify navigation**
+            zygalLoginPage.closeErrorToast(); // Close error toast message
+            zygalLoginPage.clickGoToSignIn(); // Click "Go to Sign In" button
+
             boolean isOnGetOTPPage = zygalLoginPage.isOnGetOTPPage();
             Assert.assertTrue(isOnGetOTPPage, "Navigation to Get OTP page failed after clicking 'Go to Sign In'!");
+
+            testReportListener.logSubStep("User Login with Invalid Credentials", "Click 'Go to Sign In'", "PASSED", "Navigated back to Get OTP page successfully");
 
         } finally {
             driver.quit(); // Close the browser after test execution
         }
     }
-
-
-
 }
