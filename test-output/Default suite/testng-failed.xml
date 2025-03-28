@@ -5,6 +5,7 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
+          <include name="loginWithValidCredentialsTest" invocation-numbers="0"/>
           <include name="loginWithInvalidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->

@@ -168,7 +168,7 @@ public class loginPage {
 	}
 
 	// this will clear the user email field
-	public void clearUseEmailField() {
+	public void clearUserEmailField() {
 		userId.click();  // Click to focus (if required)
 		userId.clear();  // Use clear() method
 		userId.sendKeys(Keys.CONTROL + "a");  // Select all text
