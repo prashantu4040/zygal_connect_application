@@ -77,39 +77,49 @@ public class loginPageTest {
 
     /**
      * Test: Login with invalid credentials.
+     * @throws InterruptedException 
      */
     @Test(description = "User Login with Invalid Credentials", priority = 2)
-    public void loginWithInvalidCredentialsTest() throws IOException {
+    public void loginWithInvalidCredentialsTest() throws IOException, InterruptedException {
         WebDriver driver = browserLaunch.openBrowser(); // New independent browser instance
 
         try {
             loginPage zygalLoginPage = new loginPage(driver);
 
             // **Step 1: Test Invalid Email**
-            String invalidUsername = parameterization.getData("loginData", 2, 0);
-            zygalLoginPage.enterUserId(invalidUsername);
+            String invalidUserEmail = parameterization.getData("loginData", 2, 0);
+            zygalLoginPage.enterUserId(invalidUserEmail);
             zygalLoginPage.clickOnGetOTP();
 
             String errorMessage = zygalLoginPage.getErrorText();
             Assert.assertFalse(errorMessage.isEmpty(), "Expected login error message was not displayed for invalid email!");
 
             // Log step in the test report
-            testReportListener.logSubStep("User Login with Invalid Credentials", "Invalid Email Attempt", "PASSED", "Error displayed correctly");
+            testReportListener.logSubStep("", "Invalid Email Attempt", "PASSED", "Error Message -> "+zygalLoginPage.getErrorText());
 
-            // **Step 2: Clear the input field and verify it's empty**
-            zygalLoginPage.clearUserIdField();
-            String fieldValue = zygalLoginPage.getUserIdFieldValue();
-            Assert.assertTrue(fieldValue.isEmpty(), "User ID field is not cleared before entering valid email!");
+            // **Step 2: Not registered email with zygal platform**
+            zygalLoginPage.clearUserEmailField();
+            
+            String notRegisteredEmail = parameterization.getData("logindata", 3, 0);
+            zygalLoginPage.enterUserId(notRegisteredEmail);
+            zygalLoginPage.clickOnGetOTP();
+            
+            Thread.sleep(1000);
+            errorMessage = zygalLoginPage.getErrorText();
+            Assert.assertFalse(errorMessage.isEmpty(), "Expected login error message was not displayed for invalid email!");
 
-            testReportListener.logSubStep("User Login with Invalid Credentials", "Clear User ID Field", "PASSED", "Field cleared successfully");
-
-            // **Step 3: Test Invalid OTP**
-            String validUsername = parameterization.getData("loginData", 1, 0); // Correct email
+            // Log step in the test report
+            testReportListener.logSubStep("", "Not Registered Email Attempt", "PASSED", "Error Message -> "+zygalLoginPage.getErrorText());
+            
+         // **Step 3: Test Invalid OTP**
+            zygalLoginPage.clearUserEmailField();
+            
+            String validUsername = parameterization.getData("loginData", 4, 0); // Correct email
             String invalidOtp = parameterization.getData("loginData", 2, 1); // Incorrect OTP
 
             zygalLoginPage.enterUserId(validUsername);
             zygalLoginPage.clickOnGetOTP();
-
+            Thread.sleep(200);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.visibilityOf(zygalLoginPage.getOtpField1()));
 
@@ -119,16 +129,29 @@ public class loginPageTest {
             errorMessage = zygalLoginPage.getErrorText();
             Assert.assertFalse(errorMessage.isEmpty(), "Expected error message was not displayed for invalid OTP!");
 
-            testReportListener.logSubStep("User Login with Invalid Credentials", "Invalid OTP Attempt", "PASSED", "Error displayed correctly for invalid OTP");
+            testReportListener.logSubStep("", "Invalid OTP Attempt", "PASSED", "Error Message -> "+zygalLoginPage.getErrorText());
+            
+            //**Step 5: Account block after 5 attempts of wrong otp entering**
+           /*
+            for (int i = 1; i <= 5; i++) {
+                zygalLoginPage.enterOTP(invalidOtp);
+                zygalLoginPage.clickOnLogin();
+                Thread.sleep(500);
+                errorMessage = zygalLoginPage.getErrorText();
+                if (i == 5) {
+                    testReportListener.logSubStep("","Account Blocked After Multiple Wrong OTPs", "PASSED", errorMessage);
+                }
+            }
+            */
 
             // **Step 4: Click "Go to Sign In" and verify navigation**
             zygalLoginPage.closeErrorToast(); // Close error toast message
             zygalLoginPage.clickGoToSignIn(); // Click "Go to Sign In" button
 
             boolean isOnGetOTPPage = zygalLoginPage.isOnGetOTPPage();
-            Assert.assertTrue(isOnGetOTPPage, "Navigation to Get OTP page failed after clicking 'Go to Sign In'!");
+            Assert.assertTrue(isOnGetOTPPage, "Navigation to Get OTP page failed after clicking Go to Sign In");
 
-            testReportListener.logSubStep("User Login with Invalid Credentials", "Click 'Go to Sign In'", "PASSED", "Navigated back to Get OTP page successfully");
+            testReportListener.logSubStep("", "Click Go to Sign In", "PASSED", "Navigated back to Get OTP page successfully");
 
         } finally {
             driver.quit(); // Close the browser after test execution
