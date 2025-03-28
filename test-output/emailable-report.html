@@ -9,12 +9,36 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Automation Suite</th></tr>
-<tr><td><a href="#t0">Zygal Connect Mobile App Test Cases</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">16,050</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Zygal Connect Mobile App Test Cases</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">20,075</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Zygal Connect Mobile App Test Cases &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Test.homePageTest</td><td><a href="#m0">verifyHomePageLoads</a></td><td rowspan="1">1743155362445</td><td rowspan="1">51</td></tr><tr class="passedodd"><td rowspan="2">Test.loginPageTest</td><td><a href="#m1">loginWithInvalidCredentialsTest</a></td><td rowspan="1">1743155355422</td><td rowspan="1">7006</td></tr><tr class="passedodd"><td><a href="#m2">loginWithValidCredentialsTest</a></td><td rowspan="1">1743155346488</td><td rowspan="1">8925</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Zygal Connect Mobile App Test Cases &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Test.loginPageTest</td><td><a href="#m0">loginWithInvalidCredentialsTest</a></td><td rowspan="1">1743156974299</td><td rowspan="1">11718</td></tr><tr><th colspan="4">Zygal Connect Mobile App Test Cases &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Test.homePageTest</td><td><a href="#m1">verifyHomePageLoads</a></td><td rowspan="1">1743156986025</td><td rowspan="1">28</td></tr><tr class="passedodd"><td rowspan="1">Test.loginPageTest</td><td><a href="#m2">loginWithValidCredentialsTest</a></td><td rowspan="1">1743156966021</td><td rowspan="1">8267</td></tr></tbody>
 </table>
-<h2>Zygal Connect Mobile App Test Cases</h2><h3 id="m0">Test.homePageTest#verifyHomePageLoads</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@160ac7fb</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Test.loginPageTest#loginWithInvalidCredentialsTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Zygal Connect Mobile App Test Cases</h2><h3 id="m0">Test.loginPageTest#loginWithInvalidCredentialsTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.166)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f0be20835ff80e2a170a0b82c403494d, clickElement {id=f.00095D8C67BDCF3ABF05023232D37247.d.F5A6A02415C47404393A2FB587A4C4BE.e.31}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.166, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 134.0.6998.166, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f0be20835ff80e2a170a0b82c403494d)] -&gt; xpath: //button[@id=&apos;loginButton&apos;]]
+Session ID: f0be20835ff80e2a170a0b82c403494d
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at POM.loginPage.clickOnGetOTP(loginPage.java:106)
+	at Test.loginPageTest.loginWithInvalidCredentialsTest(loginPageTest.java:159)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Test.homePageTest#verifyHomePageLoads</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@160ac7fb</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">Test.loginPageTest#loginWithValidCredentialsTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@160ac7fb</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

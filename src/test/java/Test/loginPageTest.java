@@ -100,7 +100,7 @@ public class loginPageTest {
             // **Step 2: Not registered email with zygal platform**
             zygalLoginPage.clearUserEmailField();
             
-            String notRegisteredEmail = parameterization.getData("logindata", 3, 0);
+            String notRegisteredEmail = parameterization.getData("loginData", 3, 0);
             zygalLoginPage.enterUserId(notRegisteredEmail);
             zygalLoginPage.clickOnGetOTP();
             
@@ -131,8 +131,8 @@ public class loginPageTest {
 
             testReportListener.logSubStep("", "Invalid OTP Attempt", "PASSED", "Error Message -> "+zygalLoginPage.getErrorText());
             
-            //**Step 5: Account block after 5 attempts of wrong otp entering**
-           /*
+            //**Step 4: Account block after 5 attempts of wrong otp entering**
+       
             for (int i = 1; i <= 5; i++) {
                 zygalLoginPage.enterOTP(invalidOtp);
                 zygalLoginPage.clickOnLogin();
@@ -142,9 +142,9 @@ public class loginPageTest {
                     testReportListener.logSubStep("","Account Blocked After Multiple Wrong OTPs", "PASSED", errorMessage);
                 }
             }
-            */
+            
 
-            // **Step 4: Click "Go to Sign In" and verify navigation**
+            // **Step 5: Click "Go to Sign In" and verify navigation**
             zygalLoginPage.closeErrorToast(); // Close error toast message
             zygalLoginPage.clickGoToSignIn(); // Click "Go to Sign In" button
 
@@ -152,9 +152,21 @@ public class loginPageTest {
             Assert.assertTrue(isOnGetOTPPage, "Navigation to Get OTP page failed after clicking Go to Sign In");
 
             testReportListener.logSubStep("", "Click Go to Sign In", "PASSED", "Navigated back to Get OTP page successfully");
+            
+            //**Step 6: Verify account block will not be able to get otp or shouldn't navigate to otp page**//
+            zygalLoginPage.enterUserId(validUsername);
+            Thread.sleep(100);
+            zygalLoginPage.clickOnGetOTP();
+
+            String expectedErrorMessage = "You have reached the maximum login attempts for the day. Please try again after 24 hours.";
+            String actualErrorMessage = zygalLoginPage.getErrorText();
+
+            Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message does not match after re-entering the email!");
+
+            testReportListener.logSubStep("", "Account block error message on Get OTP page", "PASSED", "Error Message -> " + actualErrorMessage);
 
         } finally {
-            driver.quit(); // Close the browser after test execution
+            // driver.quit(); // Close the browser after test execution
         }
     }
 }
