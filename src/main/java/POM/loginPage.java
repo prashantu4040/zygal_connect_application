@@ -63,11 +63,11 @@ public class loginPage {
 	/** Footer element used to verify successful login */
 	@FindBy(xpath = "//footer[@id='newmenubarid']")
 	private WebElement footer;
-	
-	/** Go to sign page button on login page**/
-	@FindBy(xpath ="//p[contains(text(), 'Go to Sign In page')]")
+
+	/** Go to sign page button on login page **/
+	@FindBy(xpath = "//p[contains(text(), 'Go to Sign In page')]")
 	private WebElement goToSignPage;
-	
+
 	/** Close button for error toast message */
 	@FindBy(xpath = "//button[contains(@class, 'inline-flex') and contains(@class, 'justify-center') and contains(@class, 'items-center')]")
 	private WebElement closeToastButton;
@@ -169,31 +169,29 @@ public class loginPage {
 
 	// this will clear the user email field
 	public void clearUserEmailField() {
-		userId.click();  // Click to focus (if required)
-		userId.clear();  // Use clear() method
-		userId.sendKeys(Keys.CONTROL + "a");  // Select all text
-		userId.sendKeys(Keys.DELETE);  // Delete selected text
+		userId.click(); // Click to focus (if required)
+		userId.clear(); // Use clear() method
+		userId.sendKeys(Keys.CONTROL + "a"); // Select all text
+		userId.sendKeys(Keys.DELETE); // Delete selected text
 	}
 
-	
 	public String getUserIdFieldValue() {
-	    String value = userId.getDomAttribute("value"); 
-	    return (value != null) ? value : userId.getDomProperty("value");
+		String value = userId.getDomAttribute("value");
+		return (value != null) ? value : userId.getDomProperty("value");
 	}
 
-	
 	public void clickGoToSignIn() {
 		goToSignPage.click();
 	}
-	
+
 	public boolean isOnGetOTPPage() {
-	    return getOTPButton.isDisplayed();  // Check if the "Get OTP" button is visible
+		return getOTPButton.isDisplayed(); // Check if the "Get OTP" button is visible
 	}
-	
+
 	public void closeErrorToast() {
-	    if (closeToastButton.isDisplayed()) {
-	        closeToastButton.click();
-	    }
+		if (closeToastButton.isDisplayed()) {
+			closeToastButton.click();
+		}
 	}
 
 }
