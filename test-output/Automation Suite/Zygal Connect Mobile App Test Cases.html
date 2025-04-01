@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Zygal Connect Mobile App Test Cases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 28 15:46:05 IST 2025</td>
+<td>Started on:</td><td>Tue Apr 01 13:11:22 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20075 ms)</td>
+<tr><td>Total time:</td><td>42 seconds (42594 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,60 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.loginPageTest.loginWithInvalidCredentialsTest()'><b>loginWithInvalidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Test method: User Login with Invalid Credentials</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=134.0.6998.166)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f0be20835ff80e2a170a0b82c403494d, clickElement {id=f.00095D8C67BDCF3ABF05023232D37247.d.F5A6A02415C47404393A2FB587A4C4BE.e.31}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.166, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 134.0.6998.166, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f0be20835ff80e2a170a0b82c403494d)] -&gt; xpath: //button[@id=&apos;loginButton&apos;]]
-Session ID: f0be20835ff80e2a170a0b82c403494d
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at POM.loginPage.clickOnGetOTP(loginPage.java:106)
-	at Test.loginPageTest.loginWithInvalidCredentialsTest(loginPageTest.java:159)
+<td title='Test.homePageTest.verifyHomePageLoads()'><b>verifyHomePageLoads</b><br>Test class: Test.homePageTest<br>Test method: Verify Home Page Loads Successfully<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td><div><pre>java.lang.AssertionError: Home Page did not load successfully. expected [true] but found [false]
+	at Test.homePageTest.verifyHomePageLoads(homePageTest.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1202178366", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1202178366'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=134.0.6998.166)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f0be20835ff80e2a170a0b82c403494d, clickElement {id=f.00095D8C67BDCF3ABF05023232D37247.d.F5A6A02415C47404393A2FB587A4C4BE.e.31}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.166, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 134.0.6998.166, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f0be20835ff80e2a170a0b82c403494d)] -&gt; xpath: //button[@id=&apos;loginButton&apos;]]
-Session ID: f0be20835ff80e2a170a0b82c403494d
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at POM.loginPage.clickOnGetOTP(loginPage.java:106)
-	at Test.loginPageTest.loginWithInvalidCredentialsTest(loginPageTest.java:159)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2044690596", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2044690596'><pre>java.lang.AssertionError: Home Page did not load successfully. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at Test.homePageTest.verifyHomePageLoads(homePageTest.java:23)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -157,8 +113,8 @@ Session ID: f0be20835ff80e2a170a0b82c403494d
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>11</td>
-<td>Test.loginPageTest@3401a114</td></tr>
+<td>10</td>
+<td>Test.homePageTest@35390ee3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -169,15 +125,45 @@ Session ID: f0be20835ff80e2a170a0b82c403494d
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.loginPageTest.loginWithValidCredentialsTest()'><b>loginWithValidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Test method: User Login with Valid Credentials<br>Parameters: org.testng.TestRunner@160ac7fb</td>
+<td title='Test.loginPageTest.loginwithInvalidOTP()'><b>loginwithInvalidOTP</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Invalid OTP<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
 <td></td>
-<td>8</td>
-<td>Test.loginPageTest@3401a114</td></tr>
+<td>2</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
 <tr>
-<td title='Test.homePageTest.verifyHomePageLoads()'><b>verifyHomePageLoads</b><br>Test class: Test.homePageTest<br>Test method: Verify Home Page Loads Successfully<br>Parameters: org.testng.TestRunner@160ac7fb</td>
+<td title='Test.loginPageTest.loginWithInvalidEmail()'><b>loginWithInvalidEmail</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Invalid Email<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>3</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.verifyGoToSignPage()'><b>verifyGoToSignPage</b><br>Test class: Test.loginPageTest<br>Test method: Verify Go To Sign In page Navigation<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>2</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.verifyAccountBlockOnGetOtpPage()'><b>verifyAccountBlockOnGetOtpPage</b><br>Test class: Test.loginPageTest<br>Test method: Verify that navigation and getOTP blocked for blocked account<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
 <td></td>
 <td>0</td>
-<td>Test.homePageTest@3c9bfddc</td></tr>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.loginWithNotRegisteredEmail()'><b>loginWithNotRegisteredEmail</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Not Registred Email<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>0</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.loginWithInvalidCredentialsTest()'><b>loginWithInvalidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>1</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.verifyAccountBlock()'><b>verifyAccountBlock</b><br>Test class: Test.loginPageTest<br>Test method: Verify account block after attempting wrong OTP for 5 times<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>12</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
+<tr>
+<td title='Test.loginPageTest.loginWithValidCredentialsTest()'><b>loginWithValidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Test method: User Login with Valid Credentials<br>Parameters: org.testng.TestRunner@2c88b9fc</td>
+<td></td>
+<td>9</td>
+<td>Test.loginPageTest@3569fc08</td></tr>
 </table><p>
 </body>
 </html>

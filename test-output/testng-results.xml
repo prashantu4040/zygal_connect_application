@@ -1,66 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="9" passed="8" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-28T15:46:05 IST" name="Automation Suite" finished-at="2025-03-28T15:46:26 IST" duration-ms="20075">
+  <suite started-at="2025-04-01T13:11:22 IST" name="Automation Suite" finished-at="2025-04-01T13:12:05 IST" duration-ms="42594">
     <groups>
     </groups>
-    <test started-at="2025-03-28T15:46:05 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-03-28T15:46:26 IST" duration-ms="20075">
+    <test started-at="2025-04-01T13:11:22 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-04-01T13:12:05 IST" duration-ms="42594">
       <class name="Test.loginPageTest">
-        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@3401a114]" started-at="2025-03-28T15:46:06 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-03-28T15:46:14 IST" duration-ms="8267" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:22 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-04-01T13:11:31 IST" duration-ms="9277" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@160ac7fb]]>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
-        <test-method signature="loginWithInvalidCredentialsTest()[pri:2, instance:Test.loginPageTest@3401a114]" started-at="2025-03-28T15:46:14 IST" name="loginWithInvalidCredentialsTest" description="User Login with Invalid Credentials" finished-at="2025-03-28T15:46:26 IST" duration-ms="11718" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:31 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-04-01T13:11:33 IST" duration-ms="1141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidCredentialsTest -->
+        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:33 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-04-01T13:11:36 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="3725" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidEmail -->
+        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:36 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-04-01T13:11:37 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithNotRegisteredEmail -->
+        <test-method signature="loginwithInvalidOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:37 IST" name="loginwithInvalidOTP" description="Verify Login with Invalid OTP" finished-at="2025-04-01T13:11:39 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="2456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginwithInvalidOTP -->
+        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:39 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-04-01T13:11:51 IST" depends-on-methods="Test.loginPageTest.loginwithInvalidOTP" duration-ms="12098" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountBlock -->
+        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:51 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-04-01T13:11:53 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2180" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGoToSignPage -->
+        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@3569fc08]" started-at="2025-04-01T13:11:53 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-04-01T13:11:54 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="717" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountBlockOnGetOtpPage -->
+      </class> <!-- Test.loginPageTest -->
+      <class name="Test.homePageTest">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@35390ee3]" started-at="2025-04-01T13:11:54 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-04-01T13:12:05 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="10521" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2c88b9fc]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[stale element reference: stale element not found in the current frame
-  (Session info: chrome=134.0.6998.166)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.29.0', revision: '5fc1ec94cb'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f0be20835ff80e2a170a0b82c403494d, clickElement {id=f.00095D8C67BDCF3ABF05023232D37247.d.F5A6A02415C47404393A2FB587A4C4BE.e.31}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.166, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 134.0.6998.166, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f0be20835ff80e2a170a0b82c403494d)] -> xpath: //button[@id='loginButton']]
-Session ID: f0be20835ff80e2a170a0b82c403494d]]>
+              <![CDATA[Home Page did not load successfully. expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=134.0.6998.166)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.29.0', revision: '5fc1ec94cb'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f0be20835ff80e2a170a0b82c403494d, clickElement {id=f.00095D8C67BDCF3ABF05023232D37247.d.F5A6A02415C47404393A2FB587A4C4BE.e.31}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.166, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 134.0.6998.166, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f0be20835ff80e2a170a0b82c403494d)] -> xpath: //button[@id='loginButton']]
-Session ID: f0be20835ff80e2a170a0b82c403494d
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-at POM.loginPage.clickOnGetOTP(loginPage.java:106)
-at Test.loginPageTest.loginWithInvalidCredentialsTest(loginPageTest.java:159)
+              <![CDATA[java.lang.AssertionError: Home Page did not load successfully. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at Test.homePageTest.verifyHomePageLoads(homePageTest.java:23)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -89,20 +143,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithInvalidCredentialsTest -->
-      </class> <!-- Test.loginPageTest -->
-      <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@3c9bfddc]" started-at="2025-03-28T15:46:26 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-03-28T15:46:26 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="28" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@160ac7fb]]>
-              </value>
-            </param>
-          </params>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageLoads -->
