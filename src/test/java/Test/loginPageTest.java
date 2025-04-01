@@ -70,7 +70,7 @@ public class loginPageTest {
 
 				// If login succeeds, store driver in the TestNG context for use in the next
 				// test class
-				context.setAttribute("WebDriver", driver);
+				context.setAttribute("validWebDriver", driver);
 			}
 		} catch (Exception e) {
 			driver.quit();
