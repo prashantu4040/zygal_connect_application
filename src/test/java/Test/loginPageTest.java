@@ -66,12 +66,11 @@ public class loginPageTest {
 				Assert.fail("Test failed due to login error: " + errorMessage);
 			} else {
 				loginPage zygalLoginPage = new loginPage(driver);
-				context.setAttribute("WebDriver", driver);
 				Assert.assertTrue(zygalLoginPage.isFooterVisible(), "Login Test Failed! Footer is not visible.");
 
 				// If login succeeds, store driver in the TestNG context for use in the next
 				// test class
-				
+				context.setAttribute("WebDriver", driver);
 			}
 		} catch (Exception e) {
 			driver.quit();

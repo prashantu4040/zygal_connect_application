@@ -33,7 +33,7 @@ public class testReportListener implements ITestListener {
 		boldFont.setBold(true);
 		boldStyle.setFont(boldFont);
 
-		String[] headers = { "Test Case ID", "Test Case Name", "Step Name", "Status", "Execution Time", "Comment" };
+		String[] headers = { "Test Case ID", "Test Case Name", "Status", "Execution Time", "Comment" };
 		for (int i = 0; i < headers.length; i++) {
 			Cell cell = headerRow.createCell(i);
 			cell.setCellValue(headers[i]);
@@ -54,25 +54,6 @@ public class testReportListener implements ITestListener {
 				System.out.println("Failed to delete previous test report.");
 			}
 		}
-	}
-
-	/**
-	 * Logs sub-steps within a test case.
-	 *
-	 * @param testCaseName The name of the main test case
-	 * @param stepName     The sub-step name (e.g., "Invalid Email Attempt")
-	 * @param status       The status (PASSED/FAILED)
-	 * @param comment      Additional information about the sub-step execution
-	 */
-	public static void logSubStep(String testCaseName, String stepName, String status, String comment) {
-		int testCaseId = getTestCaseId(testCaseName);
-		Row row = sheet.createRow(rowNum++);
-		row.createCell(0).setCellValue(testCaseId); // Test Case ID
-		row.createCell(1).setCellValue(testCaseName); // Main Test Case Name
-		row.createCell(2).setCellValue(stepName); // Sub-step Name
-		row.createCell(3).setCellValue(status); // PASSED/FAILED
-		row.createCell(4).setCellValue(getFormattedExecutionTime()); // Execution Time
-		row.createCell(5).setCellValue(comment); // Comment or failure reason
 	}
 
 	/**
@@ -124,10 +105,9 @@ public class testReportListener implements ITestListener {
 		Row row = sheet.createRow(rowNum++);
 		row.createCell(0).setCellValue(testCaseId); // Test Case ID
 		row.createCell(1).setCellValue(testCaseName); // Test Case Name
-		row.createCell(2).setCellValue("No Sub-Steps"); // Placeholder if no sub-steps exist
-		row.createCell(3).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
-		row.createCell(4).setCellValue(getFormattedExecutionTime()); // Execution Time
-		row.createCell(5).setCellValue(comment); // Comment or failure reason
+		row.createCell(2).setCellValue(status); // Status (PASSED, FAILED, SKIPPED)
+		row.createCell(3).setCellValue(getFormattedExecutionTime()); // Execution Time
+		row.createCell(4).setCellValue(comment); // Comment or failure reason
 	}
 
 	/**
