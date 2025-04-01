@@ -24,6 +24,13 @@ public class testReportListener implements ITestListener {
 	private static Map<String, Integer> testCaseIds = new HashMap<>(); // Stores Test Case ID for each unique test case
 																		// name
 	private static int testCaseCounter = 1; // Counter for assigning Test Case IDs
+	
+	// List of methods to exclude from the report
+	private static final List<String> EXCLUDED_METHODS = Arrays.asList(
+		"loginWithInvalidCredentialsTest",
+		"methodToExclude2"
+		// Add more method names as needed
+	);
 
 	// Static block to initialize the header row in the Excel sheet with bold text
 	static {
@@ -61,7 +68,10 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		writeResult(result, "PASSED", "Test executed successfully.");
+		String methodName = result.getMethod().getMethodName();
+		if (!EXCLUDED_METHODS.contains(methodName)) {
+			writeResult(result, "PASSED", "Test executed successfully.");
+		}
 	}
 
 	/**
@@ -69,8 +79,11 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onTestFailure(ITestResult result) {
-		String failureReason = result.getThrowable() != null ? result.getThrowable().getMessage() : "Unknown Error";
-		writeResult(result, "FAILED", failureReason);
+		String methodName = result.getMethod().getMethodName();
+		if (!EXCLUDED_METHODS.contains(methodName)) {
+			String failureReason = result.getThrowable() != null ? result.getThrowable().getMessage() : "Unknown Error";
+			writeResult(result, "FAILED", failureReason);
+		}
 	}
 
 	/**
@@ -78,7 +91,10 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		writeResult(result, "SKIPPED", "Test was skipped.");
+		String methodName = result.getMethod().getMethodName();
+		if (!EXCLUDED_METHODS.contains(methodName)) {
+			writeResult(result, "SKIPPED", "Test was skipped.");
+		}
 	}
 
 	/**
