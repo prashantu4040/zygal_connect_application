@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import POM.loginPage;
 import Utility.parameterization;
@@ -144,7 +143,26 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
 
-	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "loginwithInvalidOTP")
+	@Test(description = "Verify Resend OTP button", dependsOnMethods = "loginwithInvalidOTP")
+	public void verifyResendOTP(ITestContext context) {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+		// Wait for Resend OTP button to be visible
+		Assert.assertTrue(zygalLoginPage.isResendOtpButtonVisible(), "Resend OTP button not visible after 60 seconds!");
+
+		// Click Resend OTP button
+		zygalLoginPage.clickResendOtpButton();
+
+		// Get the OTP success message
+		String successMessage = zygalLoginPage.getSuccessText();
+
+		// Validate OTP was resent successfully
+		if (!successMessage.contains("OTP sent successfully")) {
+			Assert.fail("Resend OTP failed: " + successMessage);
+		}
+	}
+
+	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "verifyResendOTP")
 	public void verifyAccountBlock(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
