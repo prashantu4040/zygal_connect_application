@@ -13,6 +13,7 @@
       </class> <!-- Test.homePageTest -->
       <class name="Test.loginPageTest">
         <methods>
+          <include name="closeBrowser"/>
           <include name="loginWithValidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->

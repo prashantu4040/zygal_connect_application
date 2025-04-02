@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import POM.loginPage;
 import Utility.parameterization;
@@ -86,40 +87,49 @@ public class loginPageTest {
 	@Test(priority = 2)
 	public void loginWithInvalidCredentialsTest(ITestContext context) throws IOException, InterruptedException {
 		WebDriver driver = browserLaunch.openBrowser(); // New independent browser instance
-		context.setAttribute("WebDriver", driver);
+		context.setAttribute("invalidWebDriver", driver);
 	}
-	
-	@Test(description = "Verify Login with Invalid Email", dependsOnMethods  = "loginWithInvalidCredentialsTest")
-	public void loginWithInvalidEmail(ITestContext context) throws EncryptedDocumentException, IOException {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+
+	@Test(description = "Verify empty email state", dependsOnMethods = "loginWithInvalidCredentialsTest")
+	public void verifyEmptyUserEmail(ITestContext context) {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+		zygalLoginPage.clickOnGetOTP();
+		String errorMessage = zygalLoginPage.getErrorText();
+		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify empty email field --> " + errorMessage);
+	}
+
+	@Test(description = "Verify Login with Invalid Email", dependsOnMethods = "verifyEmptyUserEmail")
+	public void loginWithInvalidEmail(ITestContext context) throws EncryptedDocumentException, IOException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+
 		String userEmail = parameterization.getData("loginData", 2, 0);
 		zygalLoginPage.enterUserId(userEmail);
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();
-		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify invalid email --> "+ errorMessage);
-		
+		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify invalid email --> " + errorMessage);
+
 	}
-	
+
 	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail")
 	public void loginWithNotRegisteredEmail(ITestContext context) throws EncryptedDocumentException, IOException {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+
 		zygalLoginPage.clearUserEmailField();
 		String userEmail = parameterization.getData("loginData", 3, 0);
 		zygalLoginPage.enterUserId(userEmail);
 		String errorMessage = zygalLoginPage.getErrorText();
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
-		
+
 	}
-	
+
 	@Test(description = "Verify Login with Invalid OTP", dependsOnMethods = "loginWithNotRegisteredEmail")
 	public void loginwithInvalidOTP(ITestContext context) throws EncryptedDocumentException, IOException {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+
 		zygalLoginPage.clearUserEmailField();
 		String userEmail = parameterization.getData("loginData", 4, 0);
 		String otp = parameterization.getData("loginData", 2, 1);
@@ -129,19 +139,20 @@ public class loginPageTest {
 		wait.until(ExpectedConditions.visibilityOf(zygalLoginPage.getOtpField1()));
 		zygalLoginPage.enterOTP(otp);
 		zygalLoginPage.clickOnLogin();
-		
+
 		String errorMessage = zygalLoginPage.getErrorText();
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
-	
+
 	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "loginwithInvalidOTP")
-	public void verifyAccountBlock(ITestContext context) throws EncryptedDocumentException, IOException, InterruptedException {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+	public void verifyAccountBlock(ITestContext context)
+			throws EncryptedDocumentException, IOException, InterruptedException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+
 		String otp = parameterization.getData("loginData", 2, 1);
-		
-		for (int i = 1; i<=5; i++) {
+
+		for (int i = 1; i <= 5; i++) {
 			zygalLoginPage.enterOTP(otp);
 			Thread.sleep(1000);
 			zygalLoginPage.clickOnLogin();
@@ -149,28 +160,29 @@ public class loginPageTest {
 			zygalLoginPage.closeErrorToast();
 		}
 		String errorMessage = zygalLoginPage.getErrorText();
-		if (!errorMessage.equals("You have reached the maximum login attempts for the day. Please try again after 24 hours.")) {
+		if (!errorMessage
+				.equals("You have reached the maximum login attempts for the day. Please try again after 24 hours.")) {
 			Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
 		}
 	}
-	
+
 	@Test(description = "Verify Go To Sign In page Navigation", dependsOnMethods = "verifyAccountBlock")
 	public void verifyGoToSignPage(ITestContext context) {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clickGoToSignIn();
-		
+
 		String errorMessage = zygalLoginPage.getErrorText();
 		boolean isOnGetOTPPage = zygalLoginPage.isOnGetOTPPage();
-		Assert.assertTrue(isOnGetOTPPage, "Navigation to Get OTP page failed after clicking Go to Sign In --> " + errorMessage);
+		Assert.assertTrue(isOnGetOTPPage,
+				"Navigation to Get OTP page failed after clicking Go to Sign In --> " + errorMessage);
 	}
-	
-	
+
 	@Test(description = "Verify that navigation and getOTP blocked for blocked account", dependsOnMethods = "verifyGoToSignPage")
 	public void verifyAccountBlockOnGetOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
-		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+
 		String userEmail = parameterization.getData("logindata", 4, 0);
 		zygalLoginPage.enterUserId(userEmail);
 		zygalLoginPage.clickOnGetOTP();
