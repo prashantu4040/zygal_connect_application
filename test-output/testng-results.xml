@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-02T16:40:48 IST" name="Automation Suite" finished-at="2025-04-02T16:42:23 IST" duration-ms="95189">
+  <suite started-at="2025-04-02T17:02:50 IST" name="Automation Suite" finished-at="2025-04-02T17:04:21 IST" duration-ms="91358">
     <groups>
     </groups>
-    <test started-at="2025-04-02T16:40:48 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-04-02T16:42:23 IST" duration-ms="95189">
+    <test started-at="2025-04-02T17:02:50 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-04-02T17:04:21 IST" duration-ms="91358">
       <class name="Test.loginPageTest">
-        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:40:48 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-04-02T16:40:56 IST" duration-ms="7929" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:50 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-04-02T17:02:57 IST" duration-ms="7291" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
-        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:40:56 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-04-02T16:41:00 IST" duration-ms="3985" status="PASS">
+        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:57 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-04-02T17:02:58 IST" duration-ms="983" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCredentialsTest -->
-        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:00 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-04-02T16:41:00 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="856" status="PASS">
+        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:58 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-04-02T17:03:00 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="1406" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyEmptyUserEmail -->
-        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:00 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-04-02T16:41:01 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="951" status="PASS">
+        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:00 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-04-02T17:03:01 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="802" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidEmail -->
-        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:01 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-04-02T16:41:02 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="687" status="PASS">
+        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:01 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-04-02T17:03:01 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="734" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,7 +62,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithNotRegisteredEmail -->
-        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:02 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-04-02T16:41:03 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="733" status="PASS">
+        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:01 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-04-02T17:03:02 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="720" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -73,7 +73,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAdminViewerLoginBlock -->
-        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:03 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-04-02T16:41:06 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="3097" status="PASS">
+        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:02 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-04-02T17:03:05 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="2501" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -84,7 +84,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithWrongOTP -->
-        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:06 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-04-02T16:41:06 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="45" status="PASS">
+        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:05 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-04-02T17:03:05 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="38" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,7 +95,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySameEmailOnOtpPage -->
-        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:41:06 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-04-02T16:42:08 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="61657" status="PASS">
+        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:05 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-04-02T17:04:06 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="61748" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -106,7 +106,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResendOTP -->
-        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:42:08 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-04-02T16:42:20 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="12134" status="PASS">
+        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:06 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-04-02T17:04:18 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="12026" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,7 +117,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountBlock -->
-        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:42:20 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-04-02T16:42:22 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2244" status="PASS">
+        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:18 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2270" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -128,7 +128,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyGoToSignPage -->
-        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T16:42:22 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-04-02T16:42:23 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="722" status="PASS">
+        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:21 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="704" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -141,7 +141,7 @@
         </test-method> <!-- verifyAccountBlockOnGetOtpPage -->
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@23d1e5d0]" started-at="2025-04-02T16:42:23 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-04-02T16:42:23 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="36" status="PASS">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@23d1e5d0]" started-at="2025-04-02T17:04:21 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
