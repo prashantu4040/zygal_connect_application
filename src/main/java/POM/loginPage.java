@@ -74,11 +74,14 @@ public class loginPage {
 	private WebElement goToSignPage;
 
 	/** Close button for error toast message */
-	@FindBy(xpath = "//button[contains(@class, 'inline-flex') and contains(@class, 'justify-center') and contains(@class, 'items-center')]")
+	@FindBy(xpath = "//div[@role='alert']//button[span[text()='Close']]")
 	private WebElement closeToastButton;
 
 	@FindBy(xpath = "//p[contains(text(), 'Resend OTP')]")
 	private WebElement resendOTPButton;
+	
+	@FindBy(xpath = "//p[contains(text(), 'We sent an OTP to')]/span")
+	private WebElement verifySameEmail;
 
 	// ==============================
 	// Constructor
@@ -145,7 +148,7 @@ public class loginPage {
 	}
 
 	/**
-	 * Retrieves the error message displayed on the login page, if any.
+	 * Retrieves the error/success message displayed on the login page, if any.
 	 * 
 	 * @return The error message text if visible, otherwise an empty string.
 	 */
@@ -243,6 +246,10 @@ public class loginPage {
 		} catch (Exception e) {
 			throw new RuntimeException("Resend OTP button is not clickable, even with JavaScript!", e);
 		}
+	}
+	
+	public String getEmailOnOtpPage() {
+		return verifySameEmail.getText();
 	}
 
 }

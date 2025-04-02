@@ -142,8 +142,17 @@ public class loginPageTest {
 		String errorMessage = zygalLoginPage.getErrorText();
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
+	
+	@Test(description = "Verify same email on OTP page", dependsOnMethods ="loginwithInvalidOTP")
+	public void verifySameEmailOnOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+		String emailOnOtpPage = zygalLoginPage.getEmailOnOtpPage().trim();
+		String emailOnSignInPage = parameterization.getData("loginData", 4, 0).trim();
+		 Assert.assertEquals(emailOnOtpPage, emailOnSignInPage, "Email mismatch! OTP page email is different.");
+	}
 
-	@Test(description = "Verify Resend OTP button", dependsOnMethods = "loginwithInvalidOTP")
+	@Test(description = "Verify Resend OTP button", dependsOnMethods = "verifySameEmailOnOtpPage")
 	public void verifyResendOTP(ITestContext context) {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);

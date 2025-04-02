@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods,   11 passed</span>
+                    <span class="method-stats">12 methods,   12 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -154,6 +154,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyResendOTP(org.testng.TestRunner@47605f2f)">verifyResendOTP(org.testng.TestRunner@47605f2f)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifySameEmailOnOtpPage(org.testng.TestRunner@47605f2f)">verifySameEmailOnOtpPage(org.testng.TestRunner@47605f2f)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Automation_Suite -->
@@ -290,6 +295,16 @@
 (Verify Resend OTP button)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySameEmailOnOtpPage(org.testng.TestRunner@47605f2f)">
+                  </a> <!-- verifySameEmailOnOtpPage(org.testng.TestRunner@47605f2f) -->
+                  <span class="method-name">verifySameEmailOnOtpPage</span>
+                  <span class="parameters">(org.testng.TestRunner@47605f2f)</span>
+                  <em>
+(Verify same email on OTP page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Automation_Suite-class-passed -->
         </div> <!-- panel Automation_Suite -->
@@ -348,51 +363,55 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(11);
+data.addRows(12);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyResendOTP')
 data.setCell(0, 2, 'Test.loginPageTest')
-data.setCell(0, 3, 61770);
+data.setCell(0, 3, 61724);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyAccountBlock')
 data.setCell(1, 2, 'Test.loginPageTest')
-data.setCell(1, 3, 12045);
+data.setCell(1, 3, 12046);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'loginWithValidCredentialsTest')
 data.setCell(2, 2, 'Test.loginPageTest')
-data.setCell(2, 3, 7589);
+data.setCell(2, 3, 9085);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'loginWithInvalidCredentialsTest')
 data.setCell(3, 2, 'Test.loginPageTest')
-data.setCell(3, 3, 2617);
+data.setCell(3, 3, 2489);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'loginwithInvalidOTP')
 data.setCell(4, 2, 'Test.loginPageTest')
-data.setCell(4, 3, 2390);
+data.setCell(4, 3, 2410);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'verifyGoToSignPage')
 data.setCell(5, 2, 'Test.loginPageTest')
-data.setCell(5, 3, 2232);
+data.setCell(5, 3, 2168);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'loginWithInvalidEmail')
 data.setCell(6, 2, 'Test.loginPageTest')
-data.setCell(6, 3, 744);
+data.setCell(6, 3, 840);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'verifyAccountBlockOnGetOtpPage')
 data.setCell(7, 2, 'Test.loginPageTest')
-data.setCell(7, 3, 716);
+data.setCell(7, 3, 703);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'verifyEmptyUserEmail')
 data.setCell(8, 2, 'Test.loginPageTest')
-data.setCell(8, 3, 678);
+data.setCell(8, 3, 689);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'loginWithNotRegisteredEmail')
 data.setCell(9, 2, 'Test.loginPageTest')
-data.setCell(9, 3, 440);
+data.setCell(9, 3, 467);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verifyHomePageLoads')
-data.setCell(10, 2, 'Test.homePageTest')
-data.setCell(10, 3, 24);
+data.setCell(10, 1, 'verifySameEmailOnOtpPage')
+data.setCell(10, 2, 'Test.loginPageTest')
+data.setCell(10, 3, 69);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyHomePageLoads')
+data.setCell(11, 2, 'Test.homePageTest')
+data.setCell(11, 3, 27);
 window.suiteTableData['Automation_Suite']= { tableData: data, tableDiv: 'times-div-Automation_Suite'}
 return data;
 }
@@ -430,46 +449,50 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginWithInvalidCredentialsTest(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">7600 ms</span>
+                <span class="method-start">9094 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyEmptyUserEmail(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">10231 ms</span>
+                <span class="method-start">11595 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginWithInvalidEmail(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">10912 ms</span>
+                <span class="method-start">12288 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginWithNotRegisteredEmail(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">11667 ms</span>
+                <span class="method-start">13136 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginwithInvalidOTP(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">12115 ms</span>
+                <span class="method-start">13606 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifySameEmailOnOtpPage(org.testng.TestRunner@47605f2f)</span>
+                <span class="method-start">16020 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyResendOTP(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">14508 ms</span>
+                <span class="method-start">16098 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyAccountBlock(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">76281 ms</span>
+                <span class="method-start">77828 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyGoToSignPage(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">88329 ms</span>
+                <span class="method-start">89878 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">90570 ms</span>
+                <span class="method-start">92049 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Test.homePageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyHomePageLoads(org.testng.TestRunner@47605f2f)</span>
-                <span class="method-start">91290 ms</span>
+                <span class="method-start">92758 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
