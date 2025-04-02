@@ -90,11 +90,14 @@ public class loginPageTest {
 	}
 
 	@Test(description = "Verify empty email state", dependsOnMethods = "loginWithInvalidCredentialsTest")
-	public void verifyEmptyUserEmail(ITestContext context) {
+	public void verifyEmptyUserEmail(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();
+		zygalLoginPage.closeErrorToast();
+		String expectedError = parameterization.getData("Message", 1, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify empty email field --> " + errorMessage);
 	}
 
@@ -102,41 +105,51 @@ public class loginPageTest {
 	public void loginWithInvalidEmail(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-
 		String userEmail = parameterization.getData("loginData", 2, 0);
 		zygalLoginPage.enterUserId(userEmail);
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();
+		zygalLoginPage.closeErrorToast();
+		String expectedError = parameterization.getData("Message", 2, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected -> ");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify invalid email --> " + errorMessage);
 
 	}
 
 	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail")
-	public void loginWithNotRegisteredEmail(ITestContext context) throws EncryptedDocumentException, IOException {
+	public void loginWithNotRegisteredEmail(ITestContext context) throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-
 		zygalLoginPage.clearUserEmailField();
 		String userEmail = parameterization.getData("loginData", 3, 0);
 		zygalLoginPage.enterUserId(userEmail);
+		zygalLoginPage.clickOnGetOTP();
+		Thread.sleep(200);
 		String errorMessage = zygalLoginPage.getErrorText();
+		String expectedError = parameterization.getData("Message", 3, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
 
 	}
 	
-	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithInvalidCredentialsTest")
-	public void verifyAdminViewerLoginBlock(ITestContext context) throws EncryptedDocumentException, IOException {
+	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithNotRegisteredEmail")
+	public void verifyAdminViewerLoginBlock(ITestContext context) throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String adminViewerEmail = parameterization.getData("loginData", 5, 0);
+		zygalLoginPage.clearUserEmailField();
 		zygalLoginPage.enterUserId(adminViewerEmail);
 		zygalLoginPage.clickOnGetOTP();
+		Thread.sleep(200);
 		String errorMessage = zygalLoginPage.getErrorText();
+		zygalLoginPage.closeErrorToast();
+		String expectedError = parameterization.getData("Message", 3, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
 	}
 
-	@Test(description = "Verify Login with Invalid OTP", dependsOnMethods = "verifyAdminViewerLoginBlock")
-	public void loginwithInvalidOTP(ITestContext context) throws EncryptedDocumentException, IOException {
+	@Test(description = "Verify Login with Wrong OTP", dependsOnMethods = "verifyAdminViewerLoginBlock")
+	public void loginwithWrongOTP(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 
@@ -151,10 +164,13 @@ public class loginPageTest {
 		zygalLoginPage.clickOnLogin();
 
 		String errorMessage = zygalLoginPage.getErrorText();
+		String expectedError = parameterization.getData("Message", 5, 0);
+		zygalLoginPage.closeErrorToast();
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
 	
-	@Test(description = "Verify same email on OTP page", dependsOnMethods ="loginwithInvalidOTP")
+	@Test(description = "Verify same email on OTP page", dependsOnMethods ="loginwithWrongOTP")
 	public void verifySameEmailOnOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
@@ -198,10 +214,9 @@ public class loginPageTest {
 			zygalLoginPage.closeErrorToast();
 		}
 		String errorMessage = zygalLoginPage.getErrorText();
-		if (!errorMessage
-				.equals("You have reached the maximum login attempts for the day. Please try again after 24 hours.")) {
-			Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
-		}
+		String expectedError = parameterization.getData("Message", 6, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
+		Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
 	}
 
 	@Test(description = "Verify Go To Sign In page Navigation", dependsOnMethods = "verifyAccountBlock")
@@ -225,6 +240,8 @@ public class loginPageTest {
 		zygalLoginPage.enterUserId(userEmail);
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();
+		String expectedError = parameterization.getData("Message", 6, 0);
+		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to stop navigation for blocked account --> " + errorMessage);
 	}
 }

@@ -5,8 +5,11 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="loginwithInvalidOTP" invocation-numbers="0"/>
-          <include name="verifySameEmailOnOtpPage"/>
+          <include name="loginWithInvalidEmail"/>
+          <include name="loginwithWrongOTP"/>
+          <include name="loginWithNotRegisteredEmail"/>
+          <include name="verifyAdminViewerLoginBlock" invocation-numbers="0"/>
+          <include name="verifyEmptyUserEmail"/>
           <include name="loginWithInvalidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->

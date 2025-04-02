@@ -6,15 +6,12 @@
   </listeners>
   <test thread-count="5" name="Zygal Connect Mobile App Test Cases(failed)">
     <classes>
-      <class name="Test.homePageTest">
-        <methods>
-          <include name="verifyHomePageLoads" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Test.homePageTest -->
       <class name="Test.loginPageTest">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="loginWithValidCredentialsTest"/>
+          <include name="loginWithInvalidEmail"/>
+          <include name="loginWithNotRegisteredEmail"/>
+          <include name="verifyEmptyUserEmail" invocation-numbers="0"/>
+          <include name="loginWithInvalidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>
