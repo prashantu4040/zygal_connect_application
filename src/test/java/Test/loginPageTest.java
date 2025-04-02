@@ -123,8 +123,19 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
 
 	}
+	
+	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithInvalidCredentialsTest")
+	public void verifyAdminViewerLoginBlock(ITestContext context) throws EncryptedDocumentException, IOException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+		String adminViewerEmail = parameterization.getData("loginData", 5, 0);
+		zygalLoginPage.enterUserId(adminViewerEmail);
+		zygalLoginPage.clickOnGetOTP();
+		String errorMessage = zygalLoginPage.getErrorText();
+		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
+	}
 
-	@Test(description = "Verify Login with Invalid OTP", dependsOnMethods = "loginWithNotRegisteredEmail")
+	@Test(description = "Verify Login with Invalid OTP", dependsOnMethods = "verifyAdminViewerLoginBlock")
 	public void loginwithInvalidOTP(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);

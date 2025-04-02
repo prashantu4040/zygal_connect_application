@@ -29,30 +29,7 @@ public class loginPage {
 	/** "Get OTP" button */
 	@FindBy(xpath = "//button[@id='loginButton']")
 	private WebElement getOTPButton;
-
-	// ==============================
-	// Locators - OTP Input Fields
-	// ==============================
-
-	/** OTP input fields (each digit has a separate input box) */
-	@FindBy(xpath = "//input[@type='password' and @name='otp_0' and @maxlength='1']")
-	private WebElement otpField1;
-
-	@FindBy(xpath = "//input[@type='password' and @name='otp_1' and @maxlength='1']")
-	private WebElement otpField2;
-
-	@FindBy(xpath = "//input[@type='password' and @name='otp_2' and @maxlength='1']")
-	private WebElement otpField3;
-
-	@FindBy(xpath = "//input[@type='password' and @name='otp_3' and @maxlength='1']")
-	private WebElement otpField4;
-
-	@FindBy(xpath = "//input[@type='password' and @name='otp_4' and @maxlength='1']")
-	private WebElement otpField5;
-
-	@FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
-	private WebElement otpField6;
-
+	
 	/** "Login" button */
 	@FindBy(xpath = "//button[@id='loginButton']")
 	private WebElement loginButton;
@@ -83,6 +60,31 @@ public class loginPage {
 	@FindBy(xpath = "//p[contains(text(), 'We sent an OTP to')]/span")
 	private WebElement verifySameEmail;
 
+
+	// ==============================
+	// Locators - OTP Input Fields
+	// ==============================
+
+	/** OTP input fields (each digit has a separate input box) */
+	@FindBy(xpath = "//input[@type='password' and @name='otp_0' and @maxlength='1']")
+	private WebElement otpField1;
+
+	@FindBy(xpath = "//input[@type='password' and @name='otp_1' and @maxlength='1']")
+	private WebElement otpField2;
+
+	@FindBy(xpath = "//input[@type='password' and @name='otp_2' and @maxlength='1']")
+	private WebElement otpField3;
+
+	@FindBy(xpath = "//input[@type='password' and @name='otp_3' and @maxlength='1']")
+	private WebElement otpField4;
+
+	@FindBy(xpath = "//input[@type='password' and @name='otp_4' and @maxlength='1']")
+	private WebElement otpField5;
+
+	@FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
+	private WebElement otpField6;
+
+	
 	// ==============================
 	// Constructor
 	// ==============================
