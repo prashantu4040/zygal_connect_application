@@ -274,8 +274,6 @@ public class loginPageTest {
 		if (attemptCount >= 5) {
 			String errorMessage = zygalLoginPage.getInfoText();
 			String expectedError = parameterization.getData("Message", 13, 0);
-			System.out.println("Actual error --> " + errorMessage);
-			System.out.println("Expected error --> " + expectedError);
 			Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 			Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
 		}
