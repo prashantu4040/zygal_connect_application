@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Automation_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Automation Suite</span>
+              <span class="suite-name border-failed">Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,80 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">14 methods, 1 failed,  10 skipped,  3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Automation_Suite" class="hide-methods failed suite-Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-Automation_Suite -->
+                      <a href="#" panel-name="suite-Automation_Suite" class="show-methods failed suite-Automation_Suite"> (show)</a> <!-- show-methods failed suite-Automation_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Automation_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyEmptyUserEmail(org.testng.TestRunner@1dd0e7c4)">verifyEmptyUserEmail(org.testng.TestRunner@1dd0e7c4)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Automation_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Automation_Suite" class="hide-methods skipped suite-Automation_Suite"> (hide)</a> <!-- hide-methods skipped suite-Automation_Suite -->
+                      <a href="#" panel-name="suite-Automation_Suite" class="show-methods skipped suite-Automation_Suite"> (show)</a> <!-- show-methods skipped suite-Automation_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Automation_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithInvalidEmail">loginWithInvalidEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithNotRegisteredEmail">loginWithNotRegisteredEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginwithWrongOTP">loginwithWrongOTP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAccountBlock">verifyAccountBlock</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAccountBlockOnGetOtpPage">verifyAccountBlockOnGetOtpPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAccountBlockOnResendOtp">verifyAccountBlockOnResendOtp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAdminViewerLoginBlock">verifyAdminViewerLoginBlock</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyGoToSignPage">verifyGoToSignPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyResendOTP">verifyResendOTP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifySameEmailOnOtpPage">verifySameEmailOnOtpPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Automation_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,52 +176,17 @@
                     <div class="method-list-content passed suite-Automation_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithInvalidCredentialsTest(org.testng.TestRunner@388ba540)">loginWithInvalidCredentialsTest(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithInvalidCredentialsTest(org.testng.TestRunner@1dd0e7c4)">loginWithInvalidCredentialsTest(org.testng.TestRunner@1dd0e7c4)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithInvalidEmail(org.testng.TestRunner@388ba540)">loginWithInvalidEmail(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithValidCredentialsTest(org.testng.TestRunner@1dd0e7c4)">loginWithValidCredentialsTest(org.testng.TestRunner@1dd0e7c4)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithNotRegisteredEmail(org.testng.TestRunner@388ba540)">loginWithNotRegisteredEmail(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginWithValidCredentialsTest(org.testng.TestRunner@388ba540)">loginWithValidCredentialsTest(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="loginwithInvalidOTP(org.testng.TestRunner@388ba540)">loginwithInvalidOTP(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAccountBlock(org.testng.TestRunner@388ba540)">verifyAccountBlock(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@388ba540)">verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyEmptyUserEmail(org.testng.TestRunner@388ba540)">verifyEmptyUserEmail(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.loginPageTest" class="method navigator-link" hash-for-method="verifyGoToSignPage(org.testng.TestRunner@388ba540)">verifyGoToSignPage(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Automation_Suite" title="Test.homePageTest" class="method navigator-link" hash-for-method="verifyHomePageLoads(org.testng.TestRunner@388ba540)">verifyHomePageLoads(org.testng.TestRunner@388ba540)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Automation_Suite" title="Test.homePageTest" class="method navigator-link" hash-for-method="verifyHomePageLoads(org.testng.TestRunner@1dd0e7c4)">verifyHomePageLoads(org.testng.TestRunner@1dd0e7c4)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Automation_Suite -->
@@ -163,6 +201,200 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Automation_Suite" class="panel Automation_Suite">
+          <div class="suite-Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Test.loginPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmptyUserEmail(org.testng.TestRunner@1dd0e7c4)">
+                  </a> <!-- verifyEmptyUserEmail(org.testng.TestRunner@1dd0e7c4) -->
+                  <span class="method-name">verifyEmptyUserEmail</span>
+                  <span class="parameters">(org.testng.TestRunner@1dd0e7c4)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@id=&apos;loginButton&apos;]&quot;}
+  (Session info: chrome=134.0.6998.179)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81ec64fa8daf30c077d70ca098674836, findElement {value=//button[@id=&apos;loginButton&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.179, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49661}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49661/devtoo..., se:cdpVersion: 134.0.6998.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81ec64fa8daf30c077d70ca098674836
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at POM.loginPage.clickOnGetOTP(loginPage.java:123)
+	at Test.loginPageTest.verifyEmptyUserEmail(loginPageTest.java:96)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify empty email state)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Automation_Suite-class-failed -->
+          <div class="suite-Automation_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">Test.loginPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithInvalidEmail">
+                  </a> <!-- loginWithInvalidEmail -->
+                  <span class="method-name">loginWithInvalidEmail</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyEmptyUserEmail() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Login with Invalid Email)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithNotRegisteredEmail">
+                  </a> <!-- loginWithNotRegisteredEmail -->
+                  <span class="method-name">loginWithNotRegisteredEmail</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Login with Not Registred Email)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginwithWrongOTP">
+                  </a> <!-- loginwithWrongOTP -->
+                  <span class="method-name">loginwithWrongOTP</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Login with Wrong OTP)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAccountBlock">
+                  </a> <!-- verifyAccountBlock -->
+                  <span class="method-name">verifyAccountBlock</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify account block after attempting wrong OTP for 5 times)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAccountBlockOnGetOtpPage">
+                  </a> <!-- verifyAccountBlockOnGetOtpPage -->
+                  <span class="method-name">verifyAccountBlockOnGetOtpPage</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify that navigation and getOTP blocked for blocked account)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAccountBlockOnResendOtp">
+                  </a> <!-- verifyAccountBlockOnResendOtp -->
+                  <span class="method-name">verifyAccountBlockOnResendOtp</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlockOnResendOtp() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify account block after 5 times of resend otp)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAdminViewerLoginBlock">
+                  </a> <!-- verifyAdminViewerLoginBlock -->
+                  <span class="method-name">verifyAdminViewerLoginBlock</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify admin viewer Shouldn't be able to login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyGoToSignPage">
+                  </a> <!-- verifyGoToSignPage -->
+                  <span class="method-name">verifyGoToSignPage</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Go To Sign In page Navigation)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyResendOTP">
+                  </a> <!-- verifyResendOTP -->
+                  <span class="method-name">verifyResendOTP</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Resend OTP button)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySameEmailOnOtpPage">
+                  </a> <!-- verifySameEmailOnOtpPage -->
+                  <span class="method-name">verifySameEmailOnOtpPage</span>
+                  <div class="stack-trace">java.lang.Throwable: Method Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify same email on OTP page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Automation_Suite-class-skipped -->
           <div class="suite-Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -171,10 +403,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyHomePageLoads(org.testng.TestRunner@388ba540)">
-                  </a> <!-- verifyHomePageLoads(org.testng.TestRunner@388ba540) -->
+                  <a name="verifyHomePageLoads(org.testng.TestRunner@1dd0e7c4)">
+                  </a> <!-- verifyHomePageLoads(org.testng.TestRunner@1dd0e7c4) -->
                   <span class="method-name">verifyHomePageLoads</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
+                  <span class="parameters">(org.testng.TestRunner@1dd0e7c4)</span>
                   <em>
 (Verify Home Page Loads Successfully)                  </em>
                 </div> <!-- method-content -->
@@ -189,90 +421,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginWithInvalidCredentialsTest(org.testng.TestRunner@388ba540)">
-                  </a> <!-- loginWithInvalidCredentialsTest(org.testng.TestRunner@388ba540) -->
+                  <a name="loginWithInvalidCredentialsTest(org.testng.TestRunner@1dd0e7c4)">
+                  </a> <!-- loginWithInvalidCredentialsTest(org.testng.TestRunner@1dd0e7c4) -->
                   <span class="method-name">loginWithInvalidCredentialsTest</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
+                  <span class="parameters">(org.testng.TestRunner@1dd0e7c4)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginWithInvalidEmail(org.testng.TestRunner@388ba540)">
-                  </a> <!-- loginWithInvalidEmail(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">loginWithInvalidEmail</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify Login with Invalid Email)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginWithNotRegisteredEmail(org.testng.TestRunner@388ba540)">
-                  </a> <!-- loginWithNotRegisteredEmail(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">loginWithNotRegisteredEmail</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify Login with Not Registred Email)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginWithValidCredentialsTest(org.testng.TestRunner@388ba540)">
-                  </a> <!-- loginWithValidCredentialsTest(org.testng.TestRunner@388ba540) -->
+                  <a name="loginWithValidCredentialsTest(org.testng.TestRunner@1dd0e7c4)">
+                  </a> <!-- loginWithValidCredentialsTest(org.testng.TestRunner@1dd0e7c4) -->
                   <span class="method-name">loginWithValidCredentialsTest</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
+                  <span class="parameters">(org.testng.TestRunner@1dd0e7c4)</span>
                   <em>
 (User Login with Valid Credentials)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginwithInvalidOTP(org.testng.TestRunner@388ba540)">
-                  </a> <!-- loginwithInvalidOTP(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">loginwithInvalidOTP</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify Login with Invalid OTP)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyAccountBlock(org.testng.TestRunner@388ba540)">
-                  </a> <!-- verifyAccountBlock(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">verifyAccountBlock</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify account block after attempting wrong OTP for 5 times)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@388ba540)">
-                  </a> <!-- verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">verifyAccountBlockOnGetOtpPage</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify that navigation and getOTP blocked for blocked account)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyEmptyUserEmail(org.testng.TestRunner@388ba540)">
-                  </a> <!-- verifyEmptyUserEmail(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">verifyEmptyUserEmail</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify empty email state)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyGoToSignPage(org.testng.TestRunner@388ba540)">
-                  </a> <!-- verifyGoToSignPage(org.testng.TestRunner@388ba540) -->
-                  <span class="method-name">verifyGoToSignPage</span>
-                  <span class="parameters">(org.testng.TestRunner@388ba540)</span>
-                  <em>
-(Verify Go To Sign In page Navigation)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -333,52 +495,68 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(14);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyAccountBlock')
+data.setCell(0, 1, 'loginWithValidCredentialsTest')
 data.setCell(0, 2, 'Test.loginPageTest')
-data.setCell(0, 3, 12243);
+data.setCell(0, 3, 10238);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginWithValidCredentialsTest')
+data.setCell(1, 1, 'loginWithInvalidCredentialsTest')
 data.setCell(1, 2, 'Test.loginPageTest')
-data.setCell(1, 3, 8049);
+data.setCell(1, 3, 4900);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginwithInvalidOTP')
-data.setCell(2, 2, 'Test.loginPageTest')
-data.setCell(2, 3, 2951);
+data.setCell(2, 1, 'verifyHomePageLoads')
+data.setCell(2, 2, 'Test.homePageTest')
+data.setCell(2, 3, 94);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyGoToSignPage')
+data.setCell(3, 1, 'verifyEmptyUserEmail')
 data.setCell(3, 2, 'Test.loginPageTest')
-data.setCell(3, 3, 2204);
+data.setCell(3, 3, 25);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'loginWithInvalidCredentialsTest')
+data.setCell(4, 1, 'loginwithWrongOTP')
 data.setCell(4, 2, 'Test.loginPageTest')
-data.setCell(4, 3, 1949);
+data.setCell(4, 3, 1);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'loginWithInvalidEmail')
+data.setCell(5, 1, 'verifySameEmailOnOtpPage')
 data.setCell(5, 2, 'Test.loginPageTest')
-data.setCell(5, 3, 721);
+data.setCell(5, 3, 1);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyAccountBlockOnGetOtpPage')
+data.setCell(6, 1, 'verifyGoToSignPage')
 data.setCell(6, 2, 'Test.loginPageTest')
-data.setCell(6, 3, 684);
+data.setCell(6, 3, 1);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyEmptyUserEmail')
+data.setCell(7, 1, 'verifyResendOTP')
 data.setCell(7, 2, 'Test.loginPageTest')
-data.setCell(7, 3, 676);
+data.setCell(7, 3, 0);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'loginWithNotRegisteredEmail')
 data.setCell(8, 2, 'Test.loginPageTest')
-data.setCell(8, 3, 446);
+data.setCell(8, 3, 0);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verifyHomePageLoads')
-data.setCell(9, 2, 'Test.homePageTest')
-data.setCell(9, 3, 22);
+data.setCell(9, 1, 'verifyAdminViewerLoginBlock')
+data.setCell(9, 2, 'Test.loginPageTest')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyAccountBlock')
+data.setCell(10, 2, 'Test.loginPageTest')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyAccountBlockOnResendOtp')
+data.setCell(11, 2, 'Test.loginPageTest')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyAccountBlockOnGetOtpPage')
+data.setCell(12, 2, 'Test.loginPageTest')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'loginWithInvalidEmail')
+data.setCell(13, 2, 'Test.loginPageTest')
+data.setCell(13, 3, 0);
 window.suiteTableData['Automation_Suite']= { tableData: data, tableDiv: 'times-div-Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-Automation_Suite">
               </div> <!-- times-div-Automation_Suite -->
             </div> <!-- times-div -->
@@ -406,47 +584,25 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Test.loginPageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">loginWithValidCredentialsTest(org.testng.TestRunner@388ba540)</span>
+                <span class="method-name">loginWithValidCredentialsTest(org.testng.TestRunner@1dd0e7c4)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">loginWithInvalidCredentialsTest(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">8061 ms</span>
+                <span class="method-name">loginWithInvalidCredentialsTest(org.testng.TestRunner@1dd0e7c4)</span>
+                <span class="method-start">10246 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verifyEmptyUserEmail(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">10020 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">loginWithInvalidEmail(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">10702 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">loginWithNotRegisteredEmail(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">11426 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">loginwithInvalidOTP(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">11877 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyAccountBlock(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">14834 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyGoToSignPage(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">27082 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyAccountBlockOnGetOtpPage(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">29289 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyEmptyUserEmail(org.testng.TestRunner@1dd0e7c4)</span>
+                <span class="method-start">15153 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Test.homePageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">verifyHomePageLoads(org.testng.TestRunner@388ba540)</span>
-                <span class="method-start">29976 ms</span>
+                <span class="method-name">verifyHomePageLoads(org.testng.TestRunner@1dd0e7c4)</span>
+                <span class="method-start">15260 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
