@@ -8,16 +8,17 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="loginWithInvalidEmail"/>
           <include name="verifyResendOTP"/>
+          <include name="loginWithInvalidEmail"/>
           <include name="loginwithWrongOTP"/>
           <include name="verifyAccountBlockOnGetOtpPage"/>
           <include name="verifyGoToSignPage"/>
-          <include name="verifyAccountBlock" invocation-numbers="0"/>
           <include name="loginWithNotRegisteredEmail"/>
+          <include name="verifyAccountBlock"/>
           <include name="verifySameEmailOnOtpPage"/>
           <include name="verifyAdminViewerLoginBlock"/>
-          <include name="verifyEmptyUserEmail"/>
+          <include name="verifyEmptyUserEmail" invocation-numbers="0"/>
+          <include name="verifyAccountBlockOnResendOtp"/>
           <include name="loginWithInvalidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->

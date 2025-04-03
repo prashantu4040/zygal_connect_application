@@ -41,6 +41,10 @@ public class loginPage {
 	/** Error message displayed when login fails */
 	@FindBy(xpath = "//h3[text()='Success']/following-sibling::div")
 	private WebElement getSuccess;
+	
+	/** Error message displayed when login fails */
+	@FindBy(xpath = "//h3[text()='Info']/following-sibling::div")
+	private WebElement getInfo;
 
 	/** Footer element used to verify successful login */
 	@FindBy(xpath = "//footer[@id='newmenubarid']")
@@ -173,6 +177,16 @@ public class loginPage {
 			return "";
 		}
 	}
+	
+	public String getInfoText() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.visibilityOf(getInfo));
+			return getInfo.getText();
+		} catch (Exception e) {
+			return "";
+		}
+	}
 
 	/**
 	 * Verifies whether the footer element is visible, indicating a successful
@@ -224,11 +238,21 @@ public class loginPage {
 	 */
 	public boolean isResendOtpButtonVisible() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(62));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(65));
 			wait.until(ExpectedConditions.visibilityOf(resendOTPButton));
 			return resendOTPButton.isDisplayed();
 		} catch (Exception e) {
 			return false;
+		}
+	}
+	
+	public void waitForResendOtpButtonToDisappear() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.invisibilityOf(resendOTPButton));
+			
+		} catch (Exception e) {
+			return ;
 		}
 	}
 

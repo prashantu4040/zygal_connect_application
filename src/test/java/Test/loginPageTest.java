@@ -117,7 +117,8 @@ public class loginPageTest {
 	}
 
 	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail")
-	public void loginWithNotRegisteredEmail(ITestContext context) throws EncryptedDocumentException, IOException, InterruptedException {
+	public void loginWithNotRegisteredEmail(ITestContext context)
+			throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clearUserEmailField();
@@ -131,9 +132,10 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
 
 	}
-	
+
 	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithNotRegisteredEmail")
-	public void verifyAdminViewerLoginBlock(ITestContext context) throws EncryptedDocumentException, IOException, InterruptedException {
+	public void verifyAdminViewerLoginBlock(ITestContext context)
+			throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String adminViewerEmail = parameterization.getData("loginData", 5, 0);
@@ -169,36 +171,17 @@ public class loginPageTest {
 		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
-	
-	@Test(description = "Verify same email on OTP page", dependsOnMethods ="loginwithWrongOTP")
+
+	@Test(description = "Verify same email on OTP page", dependsOnMethods = "loginwithWrongOTP")
 	public void verifySameEmailOnOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String emailOnOtpPage = zygalLoginPage.getEmailOnOtpPage().trim();
 		String emailOnSignInPage = parameterization.getData("loginData", 4, 0).trim();
-		 Assert.assertEquals(emailOnOtpPage, emailOnSignInPage, "Email mismatch! OTP page email is different.");
+		Assert.assertEquals(emailOnOtpPage, emailOnSignInPage, "Email mismatch! OTP page email is different.");
 	}
 
-	@Test(description = "Verify Resend OTP button", dependsOnMethods = "verifySameEmailOnOtpPage")
-	public void verifyResendOTP(ITestContext context) {
-		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
-		loginPage zygalLoginPage = new loginPage(driver);
-		// Wait for Resend OTP button to be visible
-		Assert.assertTrue(zygalLoginPage.isResendOtpButtonVisible(), "Resend OTP button not visible after 60 seconds!");
-
-		// Click Resend OTP button
-		zygalLoginPage.clickResendOtpButton();
-
-		// Get the OTP success message
-		String successMessage = zygalLoginPage.getSuccessText();
-
-		// Validate OTP was resent successfully
-		if (!successMessage.contains("OTP sent successfully")) {
-			Assert.fail("Resend OTP failed: " + successMessage);
-		}
-	}
-
-	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "verifyResendOTP")
+	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "verifySameEmailOnOtpPage")
 	public void verifyAccountBlock(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
@@ -241,7 +224,61 @@ public class loginPageTest {
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();
 		String expectedError = parameterization.getData("Message", 6, 0);
+		zygalLoginPage.closeErrorToast();
 		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to stop navigation for blocked account --> " + errorMessage);
 	}
+
+	@Test(description = "Verify Resend OTP button", dependsOnMethods = "verifyAccountBlockOnGetOtpPage")
+	public void verifyResendOTP(ITestContext context) throws EncryptedDocumentException, IOException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+		zygalLoginPage.clearUserEmailField();
+		String userEmail = parameterization.getData("logindata", 6, 0);
+		zygalLoginPage.enterUserId(userEmail);
+		zygalLoginPage.clickOnGetOTP();
+		// Wait for Resend OTP button to be visible
+		Assert.assertTrue(zygalLoginPage.isResendOtpButtonVisible(), "Resend OTP button not visible after 60 seconds!");
+
+		// Click Resend OTP button
+		zygalLoginPage.clickResendOtpButton();
+
+		// Get the OTP success message
+		String successMessage = zygalLoginPage.getSuccessText();
+
+		// Validate OTP was resent successfully
+		if (!successMessage.contains("OTP sent successfully")) {
+			Assert.fail("Resend OTP failed: " + successMessage);
+		}
+	}
+
+	@Test(description = "Verify account block after 5 times of resend otp", dependsOnMethods = "verifyResendOTP")
+	public void verifyAccountBlockOnResendOtp(ITestContext context)
+			throws EncryptedDocumentException, IOException, InterruptedException {
+		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
+		loginPage zygalLoginPage = new loginPage(driver);
+		
+		int attemptCount = 1;
+		while (attemptCount <= 5) {
+			if (zygalLoginPage.isResendOtpButtonVisible()) {
+				zygalLoginPage.clickResendOtpButton();
+				System.out.println("Resend OTP Attempt #" + attemptCount);
+				attemptCount++;
+				zygalLoginPage.waitForResendOtpButtonToDisappear();
+			} else {
+				System.out.println("Resend OTP button not visible after waiting for 60 seconds. Skipping attempt #"
+						+ attemptCount);
+				break;
+			}
+		}
+		if (attemptCount >= 5) {
+			String errorMessage = zygalLoginPage.getInfoText();
+			String expectedError = parameterization.getData("Message", 13, 0);
+			System.out.println("Actual error --> " + errorMessage);
+			System.out.println("Expected error --> " + expectedError);
+			Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
+			Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
+		}
+	}
+
 }

@@ -1,151 +1,462 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="14" passed="3" failed="1" skipped="10">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-02T17:02:50 IST" name="Automation Suite" finished-at="2025-04-02T17:04:21 IST" duration-ms="91358">
+  <suite started-at="2025-04-03T12:07:48 IST" name="Automation Suite" finished-at="2025-04-03T12:08:03 IST" duration-ms="15416">
     <groups>
     </groups>
-    <test started-at="2025-04-02T17:02:50 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-04-02T17:04:21 IST" duration-ms="91358">
+    <test started-at="2025-04-03T12:07:48 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-04-03T12:08:03 IST" duration-ms="15416">
       <class name="Test.loginPageTest">
-        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:50 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-04-02T17:02:57 IST" duration-ms="7291" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:07:48 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-04-03T12:07:58 IST" duration-ms="10238" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
+                <![CDATA[org.testng.TestRunner@1dd0e7c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
-        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:57 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-04-02T17:02:58 IST" duration-ms="983" status="PASS">
+        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:07:58 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-04-03T12:08:03 IST" duration-ms="4900" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
+                <![CDATA[org.testng.TestRunner@1dd0e7c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCredentialsTest -->
-        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:02:58 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-04-02T17:03:00 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="1406" status="PASS">
+        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="25" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
+                <![CDATA[org.testng.TestRunner@1dd0e7c4]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='loginButton']"}
+  (Session info: chrome=134.0.6998.179)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81ec64fa8daf30c077d70ca098674836, findElement {value=//button[@id='loginButton'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.179, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49661}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49661/devtoo..., se:cdpVersion: 134.0.6998.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81ec64fa8daf30c077d70ca098674836]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='loginButton']"}
+  (Session info: chrome=134.0.6998.179)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81ec64fa8daf30c077d70ca098674836, findElement {value=//button[@id='loginButton'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.179, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49661}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49661/devtoo..., se:cdpVersion: 134.0.6998.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81ec64fa8daf30c077d70ca098674836
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+at POM.loginPage.clickOnGetOTP(loginPage.java:123)
+at Test.loginPageTest.verifyEmptyUserEmail(loginPageTest.java:96)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyEmptyUserEmail -->
-        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:00 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-04-02T17:03:01 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="802" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyEmptyUserEmail() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyEmptyUserEmail() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidEmail -->
-        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:01 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-04-02T17:03:01 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="734" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithInvalidEmail() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithNotRegisteredEmail -->
-        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:01 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-04-02T17:03:02 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="720" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginWithNotRegisteredEmail() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAdminViewerLoginBlock -->
-        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:02 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-04-02T17:03:05 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="2501" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAdminViewerLoginBlock() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithWrongOTP -->
-        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:05 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-04-02T17:03:05 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="38" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.loginwithWrongOTP() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySameEmailOnOtpPage -->
-        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:03:05 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-04-02T17:04:06 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="61748" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyResendOTP -->
-        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:06 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-04-02T17:04:18 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="12026" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifySameEmailOnOtpPage() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountBlock -->
-        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:18 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2270" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlock() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyGoToSignPage -->
-        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@54a67a45]" started-at="2025-04-02T17:04:21 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="704" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyGoToSignPage() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountBlockOnGetOtpPage -->
+        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlockOnGetOtpPage" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyAccountBlockOnGetOtpPage() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyResendOTP -->
+        <test-method signature="verifyAccountBlockOnResendOtp(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@7d42c224]" started-at="2025-04-03T12:08:03 IST" name="verifyAccountBlockOnResendOtp" description="Verify account block after 5 times of resend otp" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method Test.loginPageTest.verifyAccountBlockOnResendOtp() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method Test.loginPageTest.verifyAccountBlockOnResendOtp() on instance Test.loginPageTest@7d42c224 depends on not successfully finished methods 
+[Test.loginPageTest.verifyResendOTP() on instance Test.loginPageTest@7d42c224]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountBlockOnResendOtp -->
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@23d1e5d0]" started-at="2025-04-02T17:04:21 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-04-02T17:04:21 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="27" status="PASS">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@704f1591]" started-at="2025-04-03T12:08:03 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-04-03T12:08:03 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="94" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ece4966]]>
+                <![CDATA[org.testng.TestRunner@1dd0e7c4]]>
               </value>
             </param>
           </params>
