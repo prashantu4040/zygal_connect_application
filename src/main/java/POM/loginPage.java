@@ -2,6 +2,7 @@ package POM;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,41 @@ public class loginPage {
 	/** "Get OTP" button */
 	@FindBy(xpath = "//button[@id='loginButton']")
 	private WebElement getOTPButton;
+	
+	/** "Login" button */
+	@FindBy(xpath = "//button[@id='loginButton']")
+	private WebElement loginButton;
+
+	/** Error message displayed when login fails */
+	@FindBy(xpath = "//h3[text()='Error']/following-sibling::div")
+	private WebElement getError;
+
+	/** Error message displayed when login fails */
+	@FindBy(xpath = "//h3[text()='Success']/following-sibling::div")
+	private WebElement getSuccess;
+	
+	/** Error message displayed when login fails */
+	@FindBy(xpath = "//h3[text()='Info']/following-sibling::div")
+	private WebElement getInfo;
+
+	/** Footer element used to verify successful login */
+	@FindBy(xpath = "//footer[@id='newmenubarid']")
+	private WebElement footer;
+
+	/** Go to sign page button on login page **/
+	@FindBy(xpath = "//p[contains(text(), 'Go to Sign In page')]")
+	private WebElement goToSignPage;
+
+	/** Close button for error toast message */
+	@FindBy(xpath = "//div[@role='alert']//button[span[text()='Close']]")
+	private WebElement closeToastButton;
+
+	@FindBy(xpath = "//p[contains(text(), 'Resend OTP')]")
+	private WebElement resendOTPButton;
+	
+	@FindBy(xpath = "//p[contains(text(), 'We sent an OTP to')]/span")
+	private WebElement verifySameEmail;
+
 
 	// ==============================
 	// Locators - OTP Input Fields
@@ -52,26 +88,7 @@ public class loginPage {
 	@FindBy(xpath = "//input[@type='password' and @name='otp_5' and @maxlength='1']")
 	private WebElement otpField6;
 
-	/** "Login" button */
-	@FindBy(xpath = "//button[@id='loginButton']")
-	private WebElement loginButton;
-
-	/** Error message displayed when login fails */
-	@FindBy(xpath = "//h3[text()='Error']/following-sibling::div")
-	private WebElement getError;
-
-	/** Footer element used to verify successful login */
-	@FindBy(xpath = "//footer[@id='newmenubarid']")
-	private WebElement footer;
-
-	/** Go to sign page button on login page **/
-	@FindBy(xpath = "//p[contains(text(), 'Go to Sign In page')]")
-	private WebElement goToSignPage;
-
-	/** Close button for error toast message */
-	@FindBy(xpath = "//button[contains(@class, 'inline-flex') and contains(@class, 'justify-center') and contains(@class, 'items-center')]")
-	private WebElement closeToastButton;
-
+	
 	// ==============================
 	// Constructor
 	// ==============================
@@ -137,7 +154,7 @@ public class loginPage {
 	}
 
 	/**
-	 * Retrieves the error message displayed on the login page, if any.
+	 * Retrieves the error/success message displayed on the login page, if any.
 	 * 
 	 * @return The error message text if visible, otherwise an empty string.
 	 */
@@ -146,6 +163,26 @@ public class loginPage {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOf(getError));
 			return getError.getText();
+		} catch (Exception e) {
+			return "";
+		}
+	}
+
+	public String getSuccessText() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.visibilityOf(getSuccess));
+			return getSuccess.getText();
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	public String getInfoText() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.visibilityOf(getInfo));
+			return getInfo.getText();
 		} catch (Exception e) {
 			return "";
 		}
@@ -169,10 +206,10 @@ public class loginPage {
 
 	// this will clear the user email field
 	public void clearUserEmailField() {
-		userId.click(); // Click to focus (if required)
-		userId.clear(); // Use clear() method
-		userId.sendKeys(Keys.CONTROL + "a"); // Select all text
-		userId.sendKeys(Keys.DELETE); // Delete selected text
+		userId.click();
+		userId.clear();
+		userId.sendKeys(Keys.CONTROL + "a");
+		userId.sendKeys(Keys.DELETE);
 	}
 
 	public String getUserIdFieldValue() {
@@ -185,13 +222,60 @@ public class loginPage {
 	}
 
 	public boolean isOnGetOTPPage() {
-		return getOTPButton.isDisplayed(); // Check if the "Get OTP" button is visible
+		return getOTPButton.isDisplayed();
 	}
 
 	public void closeErrorToast() {
 		if (closeToastButton.isDisplayed()) {
 			closeToastButton.click();
 		}
+	}
+
+	/**
+	 * Checks if the "Resend OTP" button is visible after waiting for 60 seconds.
+	 * 
+	 * @return true if the Resend OTP button is visible, false otherwise.
+	 */
+	public boolean isResendOtpButtonVisible() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(65));
+			wait.until(ExpectedConditions.visibilityOf(resendOTPButton));
+			return resendOTPButton.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public void waitForResendOtpButtonToDisappear() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.invisibilityOf(resendOTPButton));
+			
+		} catch (Exception e) {
+			return ;
+		}
+	}
+
+	/**
+	 * Clicks the "Resend OTP" button.
+	 */
+	public void clickResendOtpButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		try {
+			// Wait until button is visible
+			wait.until(ExpectedConditions.visibilityOf(resendOTPButton));
+
+			// Execute JavaScript to click
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", resendOTPButton);
+		} catch (Exception e) {
+			throw new RuntimeException("Resend OTP button is not clickable, even with JavaScript!", e);
+		}
+	}
+	
+	public String getEmailOnOtpPage() {
+		return verifySameEmail.getText();
 	}
 
 }
