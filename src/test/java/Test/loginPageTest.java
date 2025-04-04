@@ -53,7 +53,7 @@ public class loginPageTest {
 	 */
 	@Test(description = "User Login with Valid Credentials", priority = 1)
 	public void loginWithValidCredentialsTest(ITestContext context) throws IOException {
-		WebDriver driver = browserLaunch.openBrowser(); // New browser instance
+		WebDriver driver = browserLaunch.openBrowser();
 
 		try {
 			String username = parameterization.getData("loginData", 1, 0);
@@ -272,7 +272,7 @@ public class loginPageTest {
 		}
 		if (attemptCount >= 5) {
 			String errorMessage = zygalLoginPage.getInfoText();
-			String expectedError = parameterization.getData("Message", 13, 0);
+			String expectedError = parameterization.getData("Message", 6, 0);
 			Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected");
 			Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
 		}
