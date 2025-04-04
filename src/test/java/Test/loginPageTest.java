@@ -262,7 +262,6 @@ public class loginPageTest {
 		while (attemptCount <= 5) {
 			if (zygalLoginPage.isResendOtpButtonVisible()) {
 				zygalLoginPage.clickResendOtpButton();
-				System.out.println("Resend OTP Attempt #" + attemptCount);
 				attemptCount++;
 				zygalLoginPage.waitForResendOtpButtonToDisappear();
 			} else {
