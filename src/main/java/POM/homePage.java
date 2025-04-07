@@ -24,11 +24,9 @@ public class homePage {
         PageFactory.initElements(driver, this);
     }
 
-    // Method to check if Home Page is loaded
     public boolean isHomePageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            //wait.until(ExpectedConditions.visibilityOf(header));
             wait.until(ExpectedConditions.visibilityOf(footer));
             return true;
         } catch (Exception e) {
