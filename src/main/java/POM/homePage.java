@@ -17,6 +17,9 @@ public class homePage {
 
     @FindBy(xpath = "//footer[contains(@id,'newmenubarid')]")
     private WebElement footer;
+    
+    @FindBy(xpath = "//div[@id = 'homeProfileBtn']")
+    private WebElement homeProfileBtn;
 
     // Constructor
     public homePage(WebDriver driver) {
@@ -32,5 +35,9 @@ public class homePage {
         } catch (Exception e) {
             return false;
         }
+    }
+    
+    public void clickOnProfileBtn() {
+    	homeProfileBtn.click();
     }
 }
