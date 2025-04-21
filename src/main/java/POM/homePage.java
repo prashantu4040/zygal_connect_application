@@ -17,6 +17,9 @@ public class homePage {
 
     @FindBy(xpath = "//footer[contains(@id,'newmenubarid')]")
     private WebElement footer;
+    
+    @FindBy(xpath = "//div[@id = 'homeProfileBtn']")
+    private WebElement homeProfileBtn;
 
     // Constructor
     public homePage(WebDriver driver) {
@@ -24,15 +27,17 @@ public class homePage {
         PageFactory.initElements(driver, this);
     }
 
-    // Method to check if Home Page is loaded
     public boolean isHomePageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
-            //wait.until(ExpectedConditions.visibilityOf(header));
             wait.until(ExpectedConditions.visibilityOf(footer));
             return true;
         } catch (Exception e) {
             return false;
         }
+    }
+    
+    public void clickOnProfileBtn() {
+    	homeProfileBtn.click();
     }
 }

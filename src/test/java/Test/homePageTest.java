@@ -7,11 +7,6 @@ import org.testng.annotations.Test;
 import POM.homePage;
 
 public class homePageTest {
-	
-	@Test(description = "Perform scroll up or down")
-	public void performScroll() {
-		
-	}
 
 	@Test(description = "Verify Home Page Loads Successfully", dependsOnMethods = "Test.loginPageTest.loginWithValidCredentialsTest")
 	public void verifyHomePageLoads(ITestContext context) {
@@ -28,38 +23,12 @@ public class homePageTest {
 		Assert.assertTrue(isLoaded, "Home Page did not load successfully.");
 	}
 	
-	@Test(description ="Verify cameras are selected by default")
-	public void verifyCamerasselected () {
+	@Test(description ="Navigate to Profile Page", dependsOnMethods = "verifyHomePageLoads")
+	public void goToProfilePage(ITestContext context) {
+		WebDriver driver = (WebDriver) context.getAttribute("validWebDriver");
+		homePage home = new homePage(driver);
+		home.clickOnProfileBtn();
 		
-	}
-	
-	@Test(description = "Navigation to Spaces")
-	public void verifyNavToSpaces() {
 		
-	}
-	
-	@Test(description = "Navigate back to home page")
-	public void navBackToHome() {
-		
-	}
-	
-	@Test(description = "Navigate back to previous page (Back btn)")
-	public void verifyBackBtn() {
-		
-	}
-
-	@Test(description = "Verify Navigation from Home to AI Solution")
-	public void verifyNavToAISolution() {
-
-	}
-
-	@Test(description = "Verify Navigation from Home to Collections")
-	public void verifyNavToCollections() {
-
-	}
-
-	@Test(description = "Verify Navigation from Home to Zygal Services")
-	public void verifyNavToZygalServices() {
-
 	}
 }
