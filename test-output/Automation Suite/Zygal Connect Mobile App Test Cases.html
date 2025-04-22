@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Zygal Connect Mobile App Test Cases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Apr 21 11:02:52 IST 2025</td>
+<td>Started on:</td><td>Tue Apr 22 18:34:05 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>289 seconds (289780 ms)</td>
+<tr><td>Total time:</td><td>8 seconds (8487 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,57 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Test.loginPageTest.verifyAccountBlockOnResendOtp()'><b>verifyAccountBlockOnResendOtp</b><br>Test class: Test.loginPageTest<br>Test method: Verify account block after 5 times of resend otp<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td><div><pre>java.lang.AssertionError: Error message isn&apos;t as expected expected [You have reached the maximum login attempts for the day. Please try again after 24 hours.] but found [Max OTP retry limit reached. Please try again later]
-	at Test.loginPageTest.verifyAccountBlockOnResendOtp(loginPageTest.java:276)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1959627861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1959627861'><pre>java.lang.AssertionError: Error message isn&apos;t as expected expected [You have reached the maximum login attempts for the day. Please try again after 24 hours.] but found [Max OTP retry limit reached. Please try again later]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at Test.loginPageTest.verifyAccountBlockOnResendOtp(loginPageTest.java:276)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>192</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -127,70 +76,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.loginPageTest.loginWithInvalidEmail()'><b>loginWithInvalidEmail</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Invalid Email<br>Parameters: org.testng.TestRunner@7894f09b</td>
+<td title='Test.homePageTest.verifyHomePageLoads()'><b>verifyHomePageLoads</b><br>Test class: Test.homePageTest<br>Test method: Verify Home Page Loads Successfully<br>Parameters: org.testng.TestRunner@11eadcba</td>
 <td></td>
 <td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
+<td>Test.homePageTest@349c1daf</td></tr>
 <tr>
-<td title='Test.loginPageTest.verifyAccountBlock()'><b>verifyAccountBlock</b><br>Test class: Test.loginPageTest<br>Test method: Verify account block after attempting wrong OTP for 5 times<br>Parameters: org.testng.TestRunner@7894f09b</td>
+<td title='Test.homePageTest.goToProfilePage()'><b>goToProfilePage</b><br>Test class: Test.homePageTest<br>Test method: Navigate to Profile Page<br>Parameters: org.testng.TestRunner@11eadcba</td>
 <td></td>
-<td>12</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
+<td>0</td>
+<td>Test.homePageTest@349c1daf</td></tr>
 <tr>
-<td title='Test.loginPageTest.loginWithValidCredentialsTest()'><b>loginWithValidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Test method: User Login with Valid Credentials<br>Parameters: org.testng.TestRunner@7894f09b</td>
+<td title='Test.loginPageTest.loginWithValidCredentialsTest()'><b>loginWithValidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Test method: User Login with Valid Credentials<br>Parameters: org.testng.TestRunner@11eadcba</td>
 <td></td>
 <td>8</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifyEmptyUserEmail()'><b>verifyEmptyUserEmail</b><br>Test class: Test.loginPageTest<br>Test method: Verify empty email state<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifyResendOTP()'><b>verifyResendOTP</b><br>Test class: Test.loginPageTest<br>Test method: Verify Resend OTP button<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>63</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.loginWithNotRegisteredEmail()'><b>loginWithNotRegisteredEmail</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Not Registred Email<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifyAdminViewerLoginBlock()'><b>verifyAdminViewerLoginBlock</b><br>Test class: Test.loginPageTest<br>Test method: Verify admin viewer Shouldn't be able to login<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.homePageTest.verifyHomePageLoads()'><b>verifyHomePageLoads</b><br>Test class: Test.homePageTest<br>Test method: Verify Home Page Loads Successfully<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.homePageTest@704f1591</td></tr>
-<tr>
-<td title='Test.loginPageTest.loginwithWrongOTP()'><b>loginwithWrongOTP</b><br>Test class: Test.loginPageTest<br>Test method: Verify Login with Wrong OTP<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>2</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifyAccountBlockOnGetOtpPage()'><b>verifyAccountBlockOnGetOtpPage</b><br>Test class: Test.loginPageTest<br>Test method: Verify that navigation and getOTP blocked for blocked account<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifyGoToSignPage()'><b>verifyGoToSignPage</b><br>Test class: Test.loginPageTest<br>Test method: Verify Go To Sign In page Navigation<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>2</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.verifySameEmailOnOtpPage()'><b>verifySameEmailOnOtpPage</b><br>Test class: Test.loginPageTest<br>Test method: Verify same email on OTP page<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>0</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
-<tr>
-<td title='Test.loginPageTest.loginWithInvalidCredentialsTest()'><b>loginWithInvalidCredentialsTest</b><br>Test class: Test.loginPageTest<br>Parameters: org.testng.TestRunner@7894f09b</td>
-<td></td>
-<td>4</td>
-<td>Test.loginPageTest@7d42c224</td></tr>
+<td>Test.loginPageTest@5ddea849</td></tr>
 </table><p>
 </body>
 </html>
