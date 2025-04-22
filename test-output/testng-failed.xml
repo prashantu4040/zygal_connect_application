@@ -5,13 +5,13 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="loginWithValidCredentialsTest" invocation-numbers="0"/>
+          <include name="loginWithValidCredentialsTest"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
         <methods>
-          <include name="verifyHomePageLoads" invocation-numbers="0"/>
-          <include name="goToProfilePage"/>
+          <include name="verifyHomePageLoads"/>
+          <include name="goToProfilePage" invocation-numbers="0"/>
         </methods>
       </class> <!-- Test.homePageTest -->
     </classes>

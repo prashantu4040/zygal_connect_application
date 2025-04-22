@@ -1,19 +1,29 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite">
     
-    <!-- Listener for generating test reports -->
     <listeners>
         <listener class-name="Utility.testReportListener"/>
     </listeners>
     
-    <!-- Test Suite for Zygal Connect Mobile App -->
     <test name="Zygal Connect Mobile App Test Cases">
         <classes>
-            <!-- Class for Login Page Test Cases -->
-            <class name="Test.loginPageTest"/>
-            
-            <!-- Class for Home Page Test Cases -->
-            <class name="Test.homePageTest"/>
+            <!-- Login Page Test Cases -->
+            <class name="Test.loginPageTest">
+                <methods>
+                    <include name="loginWithValidCredentialsTest"/>
+                    <exclude name="loginWithInvalidCredentialsTest"/>
+                    <!-- Toggle the next line to true/false -->
+                    <!-- <exclude name="loginWithInvalidCredentialsTest"/> -->
+                </methods>
+            </class>
+
+            <!-- Home Page Test Cases -->
+            <class name="Test.homePageTest">
+                <methods>
+                    <include name="verifyHomePageLoads"/>
+                    <include name="goToProfilePage"/>
+                </methods>
+            </class>
         </classes>
     </test>
 
