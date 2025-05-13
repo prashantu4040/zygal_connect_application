@@ -24,6 +24,16 @@
                     <include name="goToProfilePage"/>
                 </methods>
             </class>
+            
+            <!-- profile Page Test Cases -->
+            <class name="Test.profilePageTest">
+                <methods>
+                <include name="verifyProfilePageLoad"/>
+                    <!-- <include name="verifyProfilePageLoads"/>-->
+                     <!--<include name="goToProfilePage"/>-->
+                </methods>
+            </class>
+            
         </classes>
     </test>
 

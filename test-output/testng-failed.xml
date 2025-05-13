@@ -11,9 +11,14 @@
       <class name="Test.homePageTest">
         <methods>
           <include name="verifyHomePageLoads"/>
-          <include name="goToProfilePage" invocation-numbers="0"/>
+          <include name="goToProfilePage"/>
         </methods>
       </class> <!-- Test.homePageTest -->
+      <class name="Test.profilePageTest">
+        <methods>
+          <include name="verifyProfilePageLoad" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Test.profilePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
