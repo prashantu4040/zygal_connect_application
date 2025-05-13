@@ -17,9 +17,7 @@ public class profilePage {
 	@FindBy(xpath = ("//div[@id ='logoutbtn']"))
 	private WebElement logoutDialogBoxbtn;
 	
-	
-	
-	@FindBy(xpath = (""))
+	@FindBy(xpath = ("//div[@id='cancelbtn']"))
 	private WebElement logoutDialogBoxCancel;
 	
 	
