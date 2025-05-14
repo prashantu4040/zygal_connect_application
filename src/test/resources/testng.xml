@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite">
+<!--Modification date: 13-05-2025 Name: Prashant-->
     
     <listeners>
         <listener class-name="Utility.testReportListener"/>
@@ -11,7 +12,7 @@
             <class name="Test.loginPageTest">
                 <methods>
                     <include name="loginWithValidCredentialsTest"/>
-                    <exclude name="loginWithInvalidCredentialsTest"/>
+                    <include name="loginWithInvalidCredentialsTest"/>
                     <!-- Toggle the next line to true/false -->
                     <!-- <exclude name="loginWithInvalidCredentialsTest"/> -->
                 </methods>
@@ -24,6 +25,17 @@
                     <include name="goToProfilePage"/>
                 </methods>
             </class>
+            
+            <!-- profile Page Test Cases -->
+            <class name="Test.profilePageTest">
+                <methods>
+                <include name="verifyProfilePageLoad"/>
+                <include name="verifySuccessfulLogout"/>
+                    <!-- <include name="verifyProfilePageLoads"/>-->
+                     <!--<include name="goToProfilePage"/>-->
+                </methods>
+            </class>
+            
         </classes>
     </test>
 
