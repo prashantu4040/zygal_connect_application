@@ -12,7 +12,7 @@
             <class name="Test.loginPageTest">
                 <methods>
                     <include name="loginWithValidCredentialsTest"/>
-                    <exclude name="loginWithInvalidCredentialsTest"/>
+                    <include name="loginWithInvalidCredentialsTest"/>
                     <!-- Toggle the next line to true/false -->
                     <!-- <exclude name="loginWithInvalidCredentialsTest"/> -->
                 </methods>
@@ -30,6 +30,7 @@
             <class name="Test.profilePageTest">
                 <methods>
                 <include name="verifyProfilePageLoad"/>
+                <include name="verifySuccessfulLogout"/>
                     <!-- <include name="verifyProfilePageLoads"/>-->
                      <!--<include name="goToProfilePage"/>-->
                 </methods>
