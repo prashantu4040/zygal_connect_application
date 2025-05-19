@@ -8,7 +8,7 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="verifyResendOTP" invocation-numbers="0"/>
+          <include name="verifyResendOTP"/>
           <include name="loginWithInvalidEmail"/>
           <include name="loginwithWrongOTP"/>
           <include name="verifyAccountBlockOnGetOtpPage"/>
@@ -19,7 +19,7 @@
           <include name="verifyAdminViewerLoginBlock"/>
           <include name="verifyEmptyUserEmail"/>
           <include name="loginWithInvalidCredentialsTest"/>
-          <include name="verifyAccountBlockOnResendOtp"/>
+          <include name="verifyAccountBlockOnResendOtp" invocation-numbers="0"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>
