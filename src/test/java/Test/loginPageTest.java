@@ -9,7 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
+
+import Config.ConfigReader;
 import POM.loginPage;
 import Utility.parameterization;
 import Utility.browserLaunch;
@@ -19,6 +22,7 @@ import Utility.browserLaunch;
  * WebDriver and TestNG.
  */
 public class loginPageTest {
+	boolean runInvalidTests = Boolean.parseBoolean(ConfigReader.getProperty("runInvalidTests"));
 
 	/**
 	 * Common method to perform login steps.
@@ -85,8 +89,12 @@ public class loginPageTest {
 	 */
 	@Test(priority = 2)
 	public void loginWithInvalidCredentialsTest(ITestContext context) throws IOException, InterruptedException {
+		if (!runInvalidTests) {
+	        throw new SkipException("Skipping invalid login test as per config");
+	    }
 		WebDriver driver = browserLaunch.openBrowser(); // New independent browser instance
-		context.setAttribute("invalidWebDriver", driver);
+		Assert.assertNotNull(driver, "Driver initialization failed.");
+	    context.setAttribute("invalidWebDriver", driver);
 	}
 
 	@Test(description = "Verify empty email state", dependsOnMethods = "loginWithInvalidCredentialsTest")
@@ -219,7 +227,7 @@ public class loginPageTest {
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 
-		String userEmail = parameterization.getData("logindata", 4, 0);
+		String userEmail = parameterization.getData("loginData", 4, 0);
 		zygalLoginPage.enterUserId(userEmail);
 		zygalLoginPage.clickOnGetOTP();
 		String errorMessage = zygalLoginPage.getErrorText();

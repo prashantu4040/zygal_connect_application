@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite">
-<!--Modification date: 13-05-2025 Name: Prashant-->
+<!--Modification date: 14-05-2025 Name: Prashant-->
+<!--Message : Login and Logout flow is completed-->
     
     <listeners>
         <listener class-name="Utility.testReportListener"/>
@@ -13,8 +14,17 @@
                 <methods>
                     <include name="loginWithValidCredentialsTest"/>
                     <include name="loginWithInvalidCredentialsTest"/>
-                    <!-- Toggle the next line to true/false -->
-                    <!-- <exclude name="loginWithInvalidCredentialsTest"/> -->
+                    <include name="verifyEmptyUserEmail"/>
+                    <include name="loginWithInvalidEmail"/>
+                    <include name="loginWithNotRegisteredEmail"/>
+                    <include name="verifyAdminViewerLoginBlock"/>
+                    <include name="loginwithWrongOTP"/>
+                    <include name="verifySameEmailOnOtpPage"/>
+                    <include name="verifyAccountBlock"/>
+                    <include name="verifyGoToSignPage"/>
+                    <include name="verifyAccountBlockOnGetOtpPage"/>
+                    <include name="verifyResendOTP"/>
+                    <include name="verifyAccountBlockOnResendOtp"/>                   
                 </methods>
             </class>
 

@@ -29,7 +29,7 @@ public class homePageTest {
 		homePage home = new homePage(driver);
 		home.clickOnProfileBtn();
 		
-		boolean isLoaded = home.isHomePageLoaded();
-		Assert.assertTrue(isLoaded, "Profile Page loads successfully.");
+	    boolean isLoaded = home.isProfilePageLoaded();
+	    Assert.assertTrue(isLoaded, "Profile Page did not load successfully (Footer still visible).");
 	}
 }
