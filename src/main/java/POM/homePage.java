@@ -27,15 +27,28 @@ public class homePage {
         PageFactory.initElements(driver, this);
     }
 
+ // Used in verifyHomePageLoads()
     public boolean isHomePageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {
             wait.until(ExpectedConditions.visibilityOf(footer));
-            return true;
+            return true;  // Footer is visible → Home Page is loaded
         } catch (Exception e) {
             return false;
         }
     }
+
+    // Used in goToProfilePage()
+    public boolean isProfilePageLoaded() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            return wait.until(ExpectedConditions.invisibilityOf(footer)); 
+            // Footer is not visible → Profile Page is assumed loaded
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     
     public void clickOnProfileBtn() {
     	homeProfileBtn.click();
