@@ -18,8 +18,8 @@
           <include name="verifySameEmailOnOtpPage"/>
           <include name="verifyAdminViewerLoginBlock"/>
           <include name="verifyEmptyUserEmail"/>
-          <include name="loginWithInvalidCredentialsTest"/>
-          <include name="verifyAccountBlockOnResendOtp" invocation-numbers="0"/>
+          <include name="loginWithInvalidCredentialsTest" invocation-numbers="0"/>
+          <include name="verifyAccountBlockOnResendOtp"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>
