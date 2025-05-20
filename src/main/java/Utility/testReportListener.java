@@ -27,8 +27,7 @@ public class testReportListener implements ITestListener {
 	
 	// List of methods to exclude from the report
 	private static final List<String> EXCLUDED_METHODS = Arrays.asList(
-		"loginWithInvalidCredentialsTest",
-		"methodToExclude2"
+		"loginWithInvalidCredentialsTest"
 		// Add more method names as needed
 	);
 
@@ -102,13 +101,22 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onFinish(ITestContext context) {
-		try (FileOutputStream fileOut = new FileOutputStream(new File(FILE_PATH))) {
-			workbook.write(fileOut); // Writing data to the file
-			System.out.println("Test Report generated at: " + FILE_PATH);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try (FileOutputStream fileOut = new FileOutputStream(new File(FILE_PATH))) {
+	        // Auto-size all columns for better readability
+	        int totalColumns = sheet.getRow(0).getPhysicalNumberOfCells(); // Assumes header row exists
+	        for (int i = 0; i < totalColumns; i++) {
+	            sheet.autoSizeColumn(i);
+	        }
+
+	        workbook.write(fileOut); // Now write the formatted workbook
+	        System.out.println("✅ Test Report generated at: " + FILE_PATH);
+	    } catch (IOException e) {
+	        System.err.println("❌ Failed to write the test report:");
+	        e.printStackTrace();
+	    }
 	}
+
+
 
 	/**
 	 * Writes the test result details into the Excel sheet.
