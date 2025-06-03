@@ -8,18 +8,18 @@
     <classes>
       <class name="Test.loginPageTest">
         <methods>
-          <include name="verifyResendOTP"/>
-          <include name="loginWithInvalidEmail"/>
-          <include name="loginwithWrongOTP"/>
-          <include name="verifyAccountBlockOnGetOtpPage"/>
-          <include name="verifyGoToSignPage"/>
-          <include name="verifyAccountBlock"/>
-          <include name="loginWithNotRegisteredEmail"/>
-          <include name="verifySameEmailOnOtpPage"/>
-          <include name="verifyAdminViewerLoginBlock"/>
-          <include name="verifyEmptyUserEmail"/>
+          <include name="verifyResendOTP" invocation-numbers="0"/>
+          <include name="loginWithInvalidEmail" invocation-numbers="0"/>
+          <include name="loginwithWrongOTP" invocation-numbers="0"/>
+          <include name="verifyAccountBlockOnGetOtpPage" invocation-numbers="0"/>
+          <include name="verifyGoToSignPage" invocation-numbers="0"/>
+          <include name="verifyAccountBlock" invocation-numbers="0"/>
+          <include name="loginWithNotRegisteredEmail" invocation-numbers="0"/>
+          <include name="verifySameEmailOnOtpPage" invocation-numbers="0"/>
+          <include name="verifyAdminViewerLoginBlock" invocation-numbers="0"/>
+          <include name="verifyEmptyUserEmail" invocation-numbers="0"/>
+          <include name="verifyAccountBlockOnResendOtp" invocation-numbers="0"/>
           <include name="loginWithInvalidCredentialsTest" invocation-numbers="0"/>
-          <include name="verifyAccountBlockOnResendOtp"/>
         </methods>
       </class> <!-- Test.loginPageTest -->
     </classes>

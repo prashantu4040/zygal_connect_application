@@ -90,15 +90,19 @@ public class loginPageTest {
 	@Test(priority = 2)
 	public void loginWithInvalidCredentialsTest(ITestContext context) throws IOException, InterruptedException {
 		if (!runInvalidTests) {
-	        throw new SkipException("Skipping invalid login test as per config");
-	    }
+			context.setAttribute("skipInvalidTests", true);
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = browserLaunch.openBrowser(); // New independent browser instance
 		Assert.assertNotNull(driver, "Driver initialization failed.");
-	    context.setAttribute("invalidWebDriver", driver);
+		context.setAttribute("invalidWebDriver", driver);
 	}
 
-	@Test(description = "Verify empty email state", dependsOnMethods = "loginWithInvalidCredentialsTest")
+	@Test(description = "Verify empty email state", dependsOnMethods = "loginWithInvalidCredentialsTest", alwaysRun = true)
 	public void verifyEmptyUserEmail(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clickOnGetOTP();
@@ -109,8 +113,11 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify empty email field --> " + errorMessage);
 	}
 
-	@Test(description = "Verify Login with Invalid Email", dependsOnMethods = "verifyEmptyUserEmail")
+	@Test(description = "Verify Login with Invalid Email", dependsOnMethods = "verifyEmptyUserEmail", alwaysRun = true)
 	public void loginWithInvalidEmail(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String userEmail = parameterization.getData("loginData", 2, 0);
@@ -124,9 +131,12 @@ public class loginPageTest {
 
 	}
 
-	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail")
+	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail", alwaysRun = true)
 	public void loginWithNotRegisteredEmail(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clearUserEmailField();
@@ -141,9 +151,12 @@ public class loginPageTest {
 
 	}
 
-	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithNotRegisteredEmail")
+	@Test(description = "Verify admin viewer Shouldn't be able to login", dependsOnMethods = "loginWithNotRegisteredEmail", alwaysRun = true)
 	public void verifyAdminViewerLoginBlock(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String adminViewerEmail = parameterization.getData("loginData", 5, 0);
@@ -158,8 +171,11 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify not Registered email --> " + errorMessage);
 	}
 
-	@Test(description = "Verify Login with Wrong OTP", dependsOnMethods = "verifyAdminViewerLoginBlock")
+	@Test(description = "Verify Login with Wrong OTP", dependsOnMethods = "verifyAdminViewerLoginBlock", alwaysRun = true)
 	public void loginwithWrongOTP(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 
@@ -180,8 +196,11 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Faled to verify invalid otp --> " + errorMessage);
 	}
 
-	@Test(description = "Verify same email on OTP page", dependsOnMethods = "loginwithWrongOTP")
+	@Test(description = "Verify same email on OTP page", dependsOnMethods = "loginwithWrongOTP", alwaysRun = true)
 	public void verifySameEmailOnOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		String emailOnOtpPage = zygalLoginPage.getEmailOnOtpPage().trim();
@@ -189,9 +208,12 @@ public class loginPageTest {
 		Assert.assertEquals(emailOnOtpPage, emailOnSignInPage, "Email mismatch! OTP page email is different.");
 	}
 
-	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "verifySameEmailOnOtpPage")
+	@Test(description = "Verify account block after attempting wrong OTP for 5 times", dependsOnMethods = "verifySameEmailOnOtpPage", alwaysRun = true)
 	public void verifyAccountBlock(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 
@@ -210,8 +232,11 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Account block verification failed --> " + errorMessage);
 	}
 
-	@Test(description = "Verify Go To Sign In page Navigation", dependsOnMethods = "verifyAccountBlock")
+	@Test(description = "Verify Go To Sign In page Navigation", dependsOnMethods = "verifyAccountBlock", alwaysRun = true)
 	public void verifyGoToSignPage(ITestContext context) {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clickGoToSignIn();
@@ -222,8 +247,11 @@ public class loginPageTest {
 				"Navigation to Get OTP page failed after clicking Go to Sign In --> " + errorMessage);
 	}
 
-	@Test(description = "Verify that navigation and getOTP blocked for blocked account", dependsOnMethods = "verifyGoToSignPage")
+	@Test(description = "Verify that navigation and getOTP blocked for blocked account", dependsOnMethods = "verifyGoToSignPage", alwaysRun = true)
 	public void verifyAccountBlockOnGetOtpPage(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 
@@ -237,8 +265,11 @@ public class loginPageTest {
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to stop navigation for blocked account --> " + errorMessage);
 	}
 
-	@Test(description = "Verify Resend OTP button", dependsOnMethods = "verifyAccountBlockOnGetOtpPage")
+	@Test(description = "Verify Resend OTP button", dependsOnMethods = "verifyAccountBlockOnGetOtpPage", alwaysRun = true)
 	public void verifyResendOTP(ITestContext context) throws EncryptedDocumentException, IOException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
 		zygalLoginPage.clearUserEmailField();
@@ -260,12 +291,15 @@ public class loginPageTest {
 		}
 	}
 
-	@Test(description = "Verify account block after 5 times of resend otp", dependsOnMethods = "verifyResendOTP")
+	@Test(description = "Verify account block after 5 times of resend otp", dependsOnMethods = "verifyResendOTP", alwaysRun = true)
 	public void verifyAccountBlockOnResendOtp(ITestContext context)
 			throws EncryptedDocumentException, IOException, InterruptedException {
+		if (Boolean.TRUE.equals(context.getAttribute("skipInvalidTests"))) {
+			throw new SkipException("Skipping invalid login test as per config");
+		}
 		WebDriver driver = (WebDriver) context.getAttribute("invalidWebDriver");
 		loginPage zygalLoginPage = new loginPage(driver);
-		
+
 		int attemptCount = 1;
 		while (attemptCount <= 5) {
 			if (zygalLoginPage.isResendOtpButtonVisible()) {
