@@ -23,6 +23,11 @@ public class homePageTest {
 		Assert.assertTrue(isLoaded, "Home Page did not load successfully.");
 	}
 	
+	@Test(description ="")
+	public void clickOnSpaces() {
+		// write here about this method
+	}
+	
 	@Test(description ="Navigate to Profile Page", dependsOnMethods = "verifyHomePageLoads")
 	public void goToProfilePage(ITestContext context) {
 		WebDriver driver = (WebDriver) context.getAttribute("validWebDriver");

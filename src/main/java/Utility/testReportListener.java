@@ -5,6 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,11 +25,10 @@ public class testReportListener implements ITestListener {
 	private static Map<String, Integer> testCaseIds = new HashMap<>(); // Stores Test Case ID for each unique test case
 																		// name
 	private static int testCaseCounter = 1; // Counter for assigning Test Case IDs
-	
+
 	// List of methods to exclude from the report
-	private static final List<String> EXCLUDED_METHODS = Arrays.asList(
-		"loginWithInvalidCredentialsTest"
-		// Add more method names as needed
+	private static final List<String> EXCLUDED_METHODS = Arrays.asList("loginWithInvalidCredentialsTest"
+	// Add more method names as needed
 	);
 
 	// Static block to initialize the header row in the Excel sheet with bold text
@@ -90,9 +90,21 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
+		/*
+		 * String methodName = result.getMethod().getMethodName(); if
+		 * (!EXCLUDED_METHODS.contains(methodName)) { String skipReason =
+		 * "Test was skipped."; if (result.getThrowable() instanceof SkipException) {
+		 * skipReason = result.getThrowable().getMessage(); } writeResult(result,
+		 * "SKIPPED", skipReason); }
+		 */
 		String methodName = result.getMethod().getMethodName();
+
 		if (!EXCLUDED_METHODS.contains(methodName)) {
-			writeResult(result, "SKIPPED", "Test was skipped.");
+			Throwable throwable = result.getThrowable();
+			String skipReason = (throwable instanceof SkipException && throwable.getMessage() != null)
+					? throwable.getMessage()
+					: "Test was skipped.";
+			writeResult(result, "SKIPPED", skipReason);
 		}
 	}
 
@@ -101,22 +113,20 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onFinish(ITestContext context) {
-	    try (FileOutputStream fileOut = new FileOutputStream(new File(FILE_PATH))) {
-	        // Auto-size all columns for better readability
-	        int totalColumns = sheet.getRow(0).getPhysicalNumberOfCells(); // Assumes header row exists
-	        for (int i = 0; i < totalColumns; i++) {
-	            sheet.autoSizeColumn(i);
-	        }
+		try (FileOutputStream fileOut = new FileOutputStream(new File(FILE_PATH))) {
+			// Auto-size all columns for better readability
+			int totalColumns = sheet.getRow(0).getPhysicalNumberOfCells(); // Assumes header row exists
+			for (int i = 0; i < totalColumns; i++) {
+				sheet.autoSizeColumn(i);
+			}
 
-	        workbook.write(fileOut); // Now write the formatted workbook
-	        System.out.println("✅ Test Report generated at: " + FILE_PATH);
-	    } catch (IOException e) {
-	        System.err.println("❌ Failed to write the test report:");
-	        e.printStackTrace();
-	    }
+			workbook.write(fileOut); // Now write the formatted workbook
+			System.out.println("✅ Test Report generated at: " + FILE_PATH);
+		} catch (IOException e) {
+			System.err.println("❌ Failed to write the test report:");
+			e.printStackTrace();
+		}
 	}
-
-
 
 	/**
 	 * Writes the test result details into the Excel sheet.
