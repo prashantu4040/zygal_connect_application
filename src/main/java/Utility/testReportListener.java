@@ -90,13 +90,6 @@ public class testReportListener implements ITestListener {
 	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		/*
-		 * String methodName = result.getMethod().getMethodName(); if
-		 * (!EXCLUDED_METHODS.contains(methodName)) { String skipReason =
-		 * "Test was skipped."; if (result.getThrowable() instanceof SkipException) {
-		 * skipReason = result.getThrowable().getMessage(); } writeResult(result,
-		 * "SKIPPED", skipReason); }
-		 */
 		String methodName = result.getMethod().getMethodName();
 
 		if (!EXCLUDED_METHODS.contains(methodName)) {
