@@ -2,27 +2,27 @@
 <testng-results ignored="1" total="18" passed="5" failed="0" skipped="12">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-03T13:52:41 IST" name="Automation Suite" finished-at="2025-06-03T13:52:51 IST" duration-ms="10294">
+  <suite started-at="2025-06-04T15:50:58 IST" name="Automation Suite" finished-at="2025-06-04T15:51:13 IST" duration-ms="15085">
     <groups>
     </groups>
-    <test started-at="2025-06-03T13:52:41 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-06-03T13:52:51 IST" duration-ms="10294">
+    <test started-at="2025-06-04T15:50:58 IST" name="Zygal Connect Mobile App Test Cases" finished-at="2025-06-04T15:51:13 IST" duration-ms="15085">
       <class name="Test.loginPageTest">
-        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:41 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-06-03T13:52:49 IST" duration-ms="8128" status="PASS">
+        <test-method signature="loginWithValidCredentialsTest(org.testng.ITestContext)[pri:1, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:50:58 IST" name="loginWithValidCredentialsTest" description="User Login with Valid Credentials" finished-at="2025-06-04T15:51:11 IST" duration-ms="12923" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentialsTest -->
-        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-06-03T13:52:49 IST" duration-ms="4" status="SKIP">
+        <test-method signature="loginWithInvalidCredentialsTest(org.testng.ITestContext)[pri:2, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="loginWithInvalidCredentialsTest" finished-at="2025-06-04T15:51:11 IST" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -65,11 +65,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCredentialsTest -->
-        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="1" status="SKIP">
+        <test-method signature="verifyEmptyUserEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyEmptyUserEmail" description="Verify empty email state" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidCredentialsTest" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -79,7 +79,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyEmptyUserEmail(loginPageTest.java:105)
+at Test.loginPageTest.verifyEmptyUserEmail(loginPageTest.java:104)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -112,11 +112,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyEmptyUserEmail -->
-        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="1" status="SKIP">
+        <test-method signature="loginWithInvalidEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="loginWithInvalidEmail" description="Verify Login with Invalid Email" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyEmptyUserEmail" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -126,7 +126,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.loginWithInvalidEmail(loginPageTest.java:120)
+at Test.loginPageTest.loginWithInvalidEmail(loginPageTest.java:119)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -159,11 +159,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidEmail -->
-        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="2" status="SKIP">
+        <test-method signature="loginWithNotRegisteredEmail(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="loginWithNotRegisteredEmail" description="Verify Login with Not Registred Email" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.loginWithInvalidEmail" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -173,7 +173,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.loginWithNotRegisteredEmail(loginPageTest.java:139)
+at Test.loginPageTest.loginWithNotRegisteredEmail(loginPageTest.java:137)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -206,11 +206,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithNotRegisteredEmail -->
-        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="2" status="SKIP">
+        <test-method signature="verifyAdminViewerLoginBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyAdminViewerLoginBlock" description="Verify admin viewer Shouldn&#039;t be able to login" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.loginWithNotRegisteredEmail" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -220,7 +220,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyAdminViewerLoginBlock(loginPageTest.java:159)
+at Test.loginPageTest.verifyAdminViewerLoginBlock(loginPageTest.java:157)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -253,11 +253,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAdminViewerLoginBlock -->
-        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="3" status="SKIP">
+        <test-method signature="loginwithWrongOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="loginwithWrongOTP" description="Verify Login with Wrong OTP" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyAdminViewerLoginBlock" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -267,7 +267,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.loginwithWrongOTP(loginPageTest.java:178)
+at Test.loginPageTest.loginwithWrongOTP(loginPageTest.java:176)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -300,11 +300,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithWrongOTP -->
-        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="1" status="SKIP">
+        <test-method signature="verifySameEmailOnOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifySameEmailOnOtpPage" description="Verify same email on OTP page" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.loginwithWrongOTP" duration-ms="3" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -314,7 +314,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifySameEmailOnOtpPage(loginPageTest.java:203)
+at Test.loginPageTest.verifySameEmailOnOtpPage(loginPageTest.java:201)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -347,11 +347,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySameEmailOnOtpPage -->
-        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="1" status="SKIP">
+        <test-method signature="verifyAccountBlock(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyAccountBlock" description="Verify account block after attempting wrong OTP for 5 times" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifySameEmailOnOtpPage" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -361,7 +361,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyAccountBlock(loginPageTest.java:216)
+at Test.loginPageTest.verifyAccountBlock(loginPageTest.java:214)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -394,11 +394,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountBlock -->
-        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2" status="SKIP">
+        <test-method signature="verifyGoToSignPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyGoToSignPage" description="Verify Go To Sign In page Navigation" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlock" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -408,7 +408,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyGoToSignPage(loginPageTest.java:239)
+at Test.loginPageTest.verifyGoToSignPage(loginPageTest.java:237)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -441,11 +441,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyGoToSignPage -->
-        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="2" status="SKIP">
+        <test-method signature="verifyAccountBlockOnGetOtpPage(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyAccountBlockOnGetOtpPage" description="Verify that navigation and getOTP blocked for blocked account" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyGoToSignPage" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -455,7 +455,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyAccountBlockOnGetOtpPage(loginPageTest.java:254)
+at Test.loginPageTest.verifyAccountBlockOnGetOtpPage(loginPageTest.java:252)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -488,11 +488,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountBlockOnGetOtpPage -->
-        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlockOnGetOtpPage" duration-ms="2" status="SKIP">
+        <test-method signature="verifyResendOTP(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyResendOTP" description="Verify Resend OTP button" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyAccountBlockOnGetOtpPage" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -502,7 +502,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyResendOTP(loginPageTest.java:272)
+at Test.loginPageTest.verifyResendOTP(loginPageTest.java:270)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -535,11 +535,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResendOTP -->
-        <test-method signature="verifyAccountBlockOnResendOtp(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-03T13:52:49 IST" name="verifyAccountBlockOnResendOtp" description="Verify account block after 5 times of resend otp" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="2" status="SKIP">
+        <test-method signature="verifyAccountBlockOnResendOtp(org.testng.ITestContext)[pri:0, instance:Test.loginPageTest@13e547a9]" started-at="2025-06-04T15:51:11 IST" name="verifyAccountBlockOnResendOtp" description="Verify account block after 5 times of resend otp" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.verifyResendOTP" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -549,7 +549,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping invalid login test as per config
-at Test.loginPageTest.verifyAccountBlockOnResendOtp(loginPageTest.java:299)
+at Test.loginPageTest.verifyAccountBlockOnResendOtp(loginPageTest.java:297)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -584,22 +584,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- verifyAccountBlockOnResendOtp -->
       </class> <!-- Test.loginPageTest -->
       <class name="Test.homePageTest">
-        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@6955cb39]" started-at="2025-06-03T13:52:49 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-06-03T13:52:49 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="20" status="PASS">
+        <test-method signature="verifyHomePageLoads(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@6955cb39]" started-at="2025-06-04T15:51:11 IST" name="verifyHomePageLoads" description="Verify Home Page Loads Successfully" finished-at="2025-06-04T15:51:11 IST" depends-on-methods="Test.loginPageTest.loginWithValidCredentialsTest" duration-ms="28" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageLoads -->
-        <test-method signature="goToProfilePage(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@6955cb39]" started-at="2025-06-03T13:52:49 IST" name="goToProfilePage" description="Navigate to Profile Page" finished-at="2025-06-03T13:52:50 IST" depends-on-methods="Test.homePageTest.verifyHomePageLoads" duration-ms="660" status="PASS">
+        <test-method signature="goToProfilePage(org.testng.ITestContext)[pri:0, instance:Test.homePageTest@6955cb39]" started-at="2025-06-04T15:51:11 IST" name="goToProfilePage" description="Navigate to Profile Page" finished-at="2025-06-04T15:51:12 IST" depends-on-methods="Test.homePageTest.verifyHomePageLoads" duration-ms="643" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
@@ -608,22 +608,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- goToProfilePage -->
       </class> <!-- Test.homePageTest -->
       <class name="Test.profilePageTest">
-        <test-method signature="verifyProfilePageLoad(org.testng.ITestContext)[pri:0, instance:Test.profilePageTest@235a0c16]" started-at="2025-06-03T13:52:50 IST" name="verifyProfilePageLoad" description=" Verify profile page loads" finished-at="2025-06-03T13:52:50 IST" depends-on-methods="Test.homePageTest.goToProfilePage" duration-ms="621" status="PASS">
+        <test-method signature="verifyProfilePageLoad(org.testng.ITestContext)[pri:0, instance:Test.profilePageTest@235a0c16]" started-at="2025-06-04T15:51:12 IST" name="verifyProfilePageLoad" description=" Verify profile page loads" finished-at="2025-06-04T15:51:12 IST" depends-on-methods="Test.homePageTest.goToProfilePage" duration-ms="629" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProfilePageLoad -->
-        <test-method signature="verifySuccessfulLogout(org.testng.ITestContext)[pri:0, instance:Test.profilePageTest@235a0c16]" started-at="2025-06-03T13:52:50 IST" name="verifySuccessfulLogout" description="Logged out successfully" finished-at="2025-06-03T13:52:51 IST" depends-on-methods="Test.profilePageTest.verifyProfilePageLoad" duration-ms="678" status="PASS">
+        <test-method signature="verifySuccessfulLogout(org.testng.ITestContext)[pri:0, instance:Test.profilePageTest@235a0c16]" started-at="2025-06-04T15:51:12 IST" name="verifySuccessfulLogout" description="Logged out successfully" finished-at="2025-06-04T15:51:13 IST" depends-on-methods="Test.profilePageTest.verifyProfilePageLoad" duration-ms="660" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@62dae540]]>
+                <![CDATA[org.testng.TestRunner@4bff1903]]>
               </value>
             </param>
           </params>

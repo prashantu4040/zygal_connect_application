@@ -128,7 +128,6 @@ public class loginPageTest {
 		String expectedError = parameterization.getData("Message", 2, 0);
 		Assert.assertEquals(errorMessage, expectedError, "Error message isn't as expected -> ");
 		Assert.assertFalse(errorMessage.isEmpty(), "Failed to verify invalid email --> " + errorMessage);
-
 	}
 
 	@Test(description = "Verify Login with Not Registred Email", dependsOnMethods = "loginWithInvalidEmail", alwaysRun = true)
